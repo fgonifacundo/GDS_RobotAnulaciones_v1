@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.sabre.com/OTA/BFF/2010/07" elementFormDefault="qualified" targetNamespace="http://www.sabre.com/OTA/BFF/2010/07" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OTA_BestFareFinderRS">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element name="Errors">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">In case of failure errors are returned.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Error" type="MessageType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:sequence>
+          <xs:element name="Success" type="xs:string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">In case of success this element is returned.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Warnings">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">In case of any warnings this element is returned.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="Warning" type="MessageType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Solutions">
+            <xs:annotation>
+              <xs:documentation>BestFareFinder date and flight lists</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="Outbound">
+                  <xs:annotation>
+                    <xs:documentation>Outbound date and flight list for this date</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                    <xs:complexContent mixed="false">
+                      <xs:extension base="DateFlightType">
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="Inbound" type="DateFlightType">
+                            <xs:annotation>
+                              <xs:documentation>Inbound date and flight list for this date</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="BookingCodeOverride" type="xs:string" use="optional" />
+                      </xs:extension>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:choice>
+      <xs:attribute name="Version" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">For all OTA versioned messages, the version of the message is indicated by a decimal value.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="BestFareFinderOptions" type="xs:int" use="optional" />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="MessageClassType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Definies the available messaage class type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Warrning</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Diagnostic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Info</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DateFlightType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Schedules">
+        <xs:annotation>
+          <xs:documentation>A collection of  OriginDestinationOption</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Schedule">
+              <xs:annotation>
+                <xs:documentation>A container for flight segments.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="4" name="Flight" type="FlightSegmentType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="DepartureDate" type="xs:date" use="required">
+      <xs:annotation>
+        <xs:documentation>Departure Date</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="FareBasisCode" use="optional">
+      <xs:annotation>
+        <xs:documentation>Fare basis code</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="16" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute default="true" name="Availability" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>Availability indicator, 'false' means applicability only</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="FlightSegmentType">
+    <xs:sequence>
+      <xs:element name="Departure">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Departure point of flight segment.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="EndpointType" />
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Arrival" type="EndpointType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Arrival point of flight segment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingAirline" type="FlightAirlineType">
+        <xs:annotation>
+          <xs:documentation>The marketing airline.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OperatingAirline" type="FlightAirlineType">
+        <xs:annotation>
+          <xs:documentation>The operating airline of the flight if it is a codeshare  flight.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Stops">
+        <xs:annotation>
+          <xs:documentation>Stop points of flight segment.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Stop">
+              <xs:complexType>
+                <xs:attribute name="Airport" type="xs:string" use="required" />
+                <xs:attribute name="ArrivalDateTime" type="xs:dateTime" use="required" />
+                <xs:attribute name="DepartureDateTime" type="xs:dateTime" use="required" />
+                <xs:attribute name="ElapsedTime" type="xs:int" use="required">
+                  <xs:annotation>
+                    <xs:documentation>Elapsed Time in minutes</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="Duration" type="xs:int" use="required">
+                  <xs:annotation>
+                    <xs:documentation>Layover time in minutes</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="GMTOffset" type="xs:double" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute default="0" name="StopQuantity" type="xs:nonNegativeInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en"> The number of stops the flight makes</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ResBookDesigCode" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Specific Booking Class for this segment.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[A-Z\s]{1,2}" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute default="0" name="ElapsedTime" type="xs:short" use="optional">
+      <xs:annotation>
+        <xs:documentation>Elapsed segment trip time.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Equipment" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The type of equipment  used for the  flight.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarriageGrp" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Many airlines link connection flights together by terming them married segments.  When two or more segments are married, they must be processed as one unit. The segments must be moved, cancelled, and/or priced together. The value of the marriage group must be the same for all segments.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute default="true" name="eTicket" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="EndpointType">
+    <xs:attribute name="Airport" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="8" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="DateTime" type="xs:dateTime" use="required" />
+    <xs:attribute name="GMTOffset" type="xs:double" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="MessageType" mixed="true">
+    <xs:attribute name="Type" type="xs:string" use="required" />
+    <xs:attribute name="Code" type="xs:string" use="required" />
+    <xs:attribute name="MessageClass" type="MessageClassType" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">If present specify the message class.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Text" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="TimeZoneType">
+    <xs:attribute name="GMTOffset" type="xs:double" use="required" />
+  </xs:complexType>
+  <xs:complexType name="FlightAirlineType">
+    <xs:attribute name="Code" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Identifies a company by the company code.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="FlightNumber" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The flight number of the flight. </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ShortName" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:simpleType name="flight-number-type" final="#all">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,4}[A-Z]?" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

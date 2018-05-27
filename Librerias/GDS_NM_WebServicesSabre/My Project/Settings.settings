@@ -1,0 +1,123 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Servicios_SessionCreateRQ_SessionCreateRQService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_SessionClose_SessionCloseRQService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_TravelItineraryRead_TravelItineraryReadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_AirTicket_AirTicketService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_IgnoreTransaction_IgnoreTransactionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_EndTransaction_EndTransactionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_SabreCommand_SabreCommandLLSService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_QueueAccess_QueueAccessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_DailySalesReport_DailySalesReportService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_OTA_Cancel_OTA_CancelService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_Mileage_MileageService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="Servicios_TicketCoupon_eTicketCouponService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_ContextChange_ContextChangeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_AddRemark_AddRemarkService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_SpecialService_SpecialServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_DeleteSpecialService_DeleteSpecialServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_ARUNK_ARUNK_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_OTA_AirPrice_OTA_AirPriceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_PromotionalShopping_PromotionalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_RulesFromPrice_RulesFromPriceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_TravelItineraryAddInfo_TravelItineraryAddInfoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_TravelItineraryModifyInfo_TravelItineraryModifyInfoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_InvoiceItinerary_InvoiceItineraryService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_Fare_FareService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_OTA_AirRules_OTA_AirRulesService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_DesignatePrinter_DesignatePrinterService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_OTA_AirBookLLS200_OTA_AirBookService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_DailyEMD_Report_DailyEMD_ReportService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_VoidTicket_VoidTicketService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_TravelItineraryReadRQ_TravelItineraryReadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_EMD_Display_EMD_DisplayService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_TravelItineraryReadRQ360_TravelItineraryReadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_ModifyRemark_ModifyRemarkService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_AutomatedExchanges_AutomatedExchangesService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_ExchangeShopping_ExchangeShoppingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_AirTicketLLS270_AirTicketService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_DisplayPriceQuote_DisplayPriceQuoteService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_AirTicketLLS230_AirTicketService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+    <Setting Name="GDS_NM_WebServicesSabre_QueuePlaceLLS204_QueuePlaceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.sabre.com/websvc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

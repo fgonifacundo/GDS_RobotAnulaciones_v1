@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC1B7702-8B63-4E56-B5EA-56CDDD1F8BF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>GDS_NuevoMundoPersistencia</RootNamespace>
+    <AssemblyName>GDS_NuevoMundoPersistencia</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GDS_NuevoMundoPersistencia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GDS_NuevoMundoPersistencia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClasesConstantes\classConstantesError.vb" />
+    <Compile Include="ClasesConstantes\classConstantesMensajesAlertas.vb" />
+    <Compile Include="ClasesObjetos\AutomatedExchange\classTarifaRetenida.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classAerolineaC.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\Pseudos\classPseudoBulkConceptos.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\Pseudos\classPseudosBulkEvaluacion.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\Pseudos\classPseudosTarifasNegociadas.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\Pseudos\classSecuenciaPseudobulk.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classTarifabulkFq.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classTarifasBulkEvaluacion.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classTipoPaxVuelo.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classTourCodesConceptos.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClasesObjetos\ClasesSabre\classQueueInfo.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classQueuePlaceRS.vb" />
+    <Compile Include="ClasesObjetos\Emision\classFile.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classInterfaceDetalle.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classInterfaceGeneral.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\ClsBoleto_GB.vb" />
+    <Compile Include="ClasesObjetos\Generales\classBoletoPax.vb" />
+    <Compile Include="ClasesObjetos\Generales\classBoletosXConfirmacion.vb" />
+    <Compile Include="ClasesObjetos\Generales\classControlMorosidad.vb" />
+    <Compile Include="ClasesObjetos\Generales\classEjecutivo.vb" />
+    <Compile Include="ClasesObjetos\Generales\classEnvioCorreo.vb" />
+    <Compile Include="ClasesObjetos\Generales\classMotivoVoid.vb" />
+    <Compile Include="ClasesObjetos\Generales\classReporteConfirmaciones.vb" />
+    <Compile Include="ClasesObjetos\Generales\classTurboCcChargeForm.vb" />
+    <Compile Include="ClasesObjetos\OADP\classDWLIST.vb" />
+    <Compile Include="ClasesObjetos\OADP\classTurboPassengerRecipt.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classRemark.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classTurboDatosPax.vb" />
+    <Compile Include="ClasesObjetos\SolicitudReemisiones\classSolicitudReemision.vb" />
+    <Compile Include="ClasesObjetos\Tarifa\ClsAerolinea.vb" />
+    <Compile Include="ClasesObjetos\Tarifa\ClsItinerario_ODD.vb" />
+    <Compile Include="ClasesObjetos\Tarifa\ClsTarifasMain_ODD.vb" />
+    <Compile Include="OADP\CCCF\classCCCF.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classConceptosEvaluacion.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classFeeTarifaBulkResultado.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classIata.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classArunk.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classBoletosEmitidos.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classAerolinea.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classDepartureArrival.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classDetalleVuelosDisponibles.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classFechasDisponibles.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classInbound.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classPromotionalShopping.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\PromotionalShopping\classVuelosDisponibles.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classAirTicketRS.vb" />
+    <Compile Include="OADP\classTaxes.vb" />
+    <Compile Include="OADP\ElectronicTicket\classElectronicTicket.vb" />
+    <Compile Include="ClasesObjetos\Emision\classBoletoEmitido.vb" />
+    <Compile Include="ClasesObjetos\Emision\classDeleteSpecialService.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classFacturacion.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classFacturaComision.vb" />
+    <Compile Include="ClasesObjetos\FormaPago\classCuentaBancaria.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classDatosAerolinea.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classAsientos.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classFeeOpt.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classFQ.vb" />
+    <Compile Include="ClasesObjetos\Generales\classDatosAgente.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classEndTransaction.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classRegulaciones.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classReporteBoletos.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classSession.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classTicketCoupon.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classAerolineaAsociada.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classDatosTipoPasajero.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classDesignatePrinter.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classIgnoreTransaction.vb" />
+    <Compile Include="ClasesObjetos\Generales\classPais.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classSSR.vb" />
+    <Compile Include="ClasesObjetos\classCorreo.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\robotBoletoPendiente.vb" />
+    <Compile Include="ClasesObjetos\FormaPago\classCardCash.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classCorteTarifario.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classCotizacion.vb" />
+    <Compile Include="ClasesObjetos\Generales\classDato.vb" />
+    <Compile Include="ClasesObjetos\FormaPago\classDepositoTarjeta.vb" />
+    <Compile Include="ClasesObjetos\Generales\classCiudad.vb" />
+    <Compile Include="ClasesObjetos\Cliente\classCliente.vb" />
+    <Compile Include="ClasesObjetos\FormaPago\classDeposito_.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classDocFacturacion.vb" />
+    <Compile Include="ClasesObjetos\Generales\classDocumento.vb" />
+    <Compile Include="ClasesObjetos\EstadoCuenta\classDocumentosVencidos.vb" />
+    <Compile Include="ClasesObjetos\classEasyOnLine.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classClienteFacturar.vb" />
+    <Compile Include="ClasesObjetos\FormaPago\classFormaPago.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classGDS_Interface.vb" />
+    <Compile Include="ClasesObjetos\EstadoCuenta\classLineaCredito.vb" />
+    <Compile Include="ClasesObjetos\Generales\classMonto.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classPasajeros.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classPaxCotizacion.vb" />
+    <Compile Include="ClasesObjetos\Cliente\classPermisos.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classPNR.vb" />
+    <Compile Include="ClasesObjetos\Cliente\classPromotor.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classReporteVentas.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classSegmentos.vb" />
+    <Compile Include="ClasesObjetos\classSolicitud.vb" />
+    <Compile Include="ClasesObjetos\Cliente\classSubCodigo.vb" />
+    <Compile Include="ClasesObjetos\Facturacion\classSucursalPunto.vb" />
+    <Compile Include="ClasesObjetos\ClasesSabre\classTarifa.vb" />
+    <Compile Include="ClasesObjetos\Tarifa\classTarifa_x_Tipo.vb" />
+    <Compile Include="ClasesObjetos\FormaPago\classTarjeta_.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classTipoDocumentoEmision.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classTourCodeConceptos.vb" />
+    <Compile Include="ClasesObjetos\ClasesModuloComercial\classTourCodeResultado.vb" />
+    <Compile Include="ClasesObjetos\Cliente\classUsuario.vb" />
+    <Compile Include="ClasesConstantes\classConstantes.vb" />
+    <Compile Include="ClasesObjetos\Generales\classDocTarjeta.vb" />
+    <Compile Include="ClasesObjetos\Reserva\classDsctExtra.vb" />
+    <Compile Include="ClasesObjetos\Generales\classErroresAlertas.vb" />
+    <Compile Include="ClasesObjetos\Cliente\classGrupoInterno.vb" />
+    <Compile Include="ClasesObjetos\classRespuesta.vb" />
+    <Compile Include="ClasesObjetos\classAppConfig.vb" />
+    <Compile Include="ClasesObjetos\ThreadNM\classTheadFare.vb" />
+    <Compile Include="ClasesObjetos\ThreadNM\classThreadNM.vb" />
+    <Compile Include="ClassPrueba.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagramas\Dgm_ClasesObjetos.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClasesObjetos\ClasesModuloComercial\Privadas\" />
+    <Folder Include="ClasesObjetos\VentaVuelos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

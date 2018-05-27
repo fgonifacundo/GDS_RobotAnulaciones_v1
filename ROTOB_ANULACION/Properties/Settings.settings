@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ROTOB_ANULACION.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ROTOB_ANULACION_GNM_ConsultaPTA_gnm" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://vmgds01/gnmWS_KJ/GNM_ConsultaPTA.asmx</Value>
+    </Setting>
+    <Setting Name="ROTOB_ANULACION_WebServiceAmadeus_AmadeusWebServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://production.webservices.amadeus.com</Value>
+    </Setting>
+    <Setting Name="ROTOB_ANULACION_WS_ProcesosGDS_ProcesosGDS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webservices.webfarefinder.com/procesos_gds/procesosgds.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

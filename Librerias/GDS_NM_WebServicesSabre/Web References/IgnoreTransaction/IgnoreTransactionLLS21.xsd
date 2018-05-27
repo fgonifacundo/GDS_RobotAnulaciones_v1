@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://webservices.sabre.com/sabreXML/2011/10" elementFormDefault="qualified" targetNamespace="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="IgnoreTransactionRQ">
+    <xs:complexType>
+      <xs:attribute name="ReturnHostCommand" type="xs:boolean" use="optional" />
+      <xs:attribute name="TimeStamp" type="xs:dateTime" use="optional" />
+      <xs:attribute fixed="2.0.0" name="Version" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

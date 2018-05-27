@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="sws_common.xsd" />
+  <xs:element name="QueueAccessRQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Navigation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Direction">
+                <xs:complexType>
+                  <xs:attribute name="Action" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="E" />
+                        <xs:enumeration value="I" />
+                        <xs:enumeration value="L" />
+                        <xs:enumeration value="U" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Minus" type="xs:string" use="optional" />
+                  <xs:attribute name="Plus" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Action" use="optional">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="E" />
+                  <xs:enumeration value="EL" />
+                  <xs:enumeration value="ER" />
+                  <xs:enumeration value="I" />
+                  <xs:enumeration value="IR" />
+                  <xs:enumeration value="QR" />
+                  <xs:enumeration value="QXE" />
+                  <xs:enumeration value="QXER" />
+                  <xs:enumeration value="QXI" />
+                  <xs:enumeration value="QXIR" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="QueueIdentifier">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="List">
+                <xs:complexType>
+                  <xs:attribute name="Ind" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="PseudoCityCode" type="xs:string" use="optional" />
+            <xs:attribute name="Name" type="xs:string" use="optional" />
+            <xs:attribute name="Number" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="8" name="Selection">
+          <xs:complexType>
+            <xs:attribute name="Criteria" type="xs:string" use="required" />
+            <xs:attribute name="Function" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ReturnHostCommand" type="xs:boolean" use="optional" />
+      <xs:attribute name="TimeStamp" type="xs:dateTime" use="optional" />
+      <xs:attribute fixed="2.0.2" name="Version" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

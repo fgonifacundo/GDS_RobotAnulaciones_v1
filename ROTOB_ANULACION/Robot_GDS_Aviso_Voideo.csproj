@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54D0DE74-8BE4-4A97-8614-894B3F6C48A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ROTOB_ANULACION</RootNamespace>
+    <AssemblyName>ROTOB_ANULACION</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuevoMundoSecurity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Proyecto Sourcesafe\ProcesosGDS_WS\Dependencias\NuevoMundoSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.102.2.20, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\oracle\product\10.2.0\client_2\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.5-preview1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amadeus_WS\CE_Session.cs" />
+    <Compile Include="Amadeus_WS\MyConexion.cs" />
+    <Compile Include="Amadeus_WS\ReporteDiario.cs" />
+    <Compile Include="Amadeus_WS\Service.cs" />
+    <Compile Include="Amadeus_WS\WSALogin.cs" />
+    <Compile Include="Amadeus_WS\WS_BoletoAmadeus.cs" />
+    <Compile Include="ClienteRest\CE_Estatus.cs" />
+    <Compile Include="ClienteRest\CE_Mensaje.cs" />
+    <Compile Include="ClienteRest\CE_Request3.cs" />
+    <Compile Include="ClienteRest\CE_RequestBase.cs" />
+    <Compile Include="ClienteRest\CE_Response2.cs" />
+    <Compile Include="ClienteRest\CE_Session.cs" />
+    <Compile Include="ClienteRest\EnumAplicaciones.cs" />
+    <Compile Include="ClienteRest\EnumTipoMensaje.cs" />
+    <Compile Include="ClienteRest\InternalException.cs" />
+    <Compile Include="Configuracion.cs" />
+    <Compile Include="DateUtils.cs" />
+    <Compile Include="EmpresaDTO.cs" />
+    <Compile Include="GDS.cs" />
+    <Compile Include="GestorCorreo.cs" />
+    <Compile Include="MailUtils.cs" />
+    <Compile Include="Modelo\BitacoraCC.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\BoletoDTO.cs" />
+    <Compile Include="Modelo\BoletoRobotDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\ClienteDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\ComprobanteDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\FileDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\PseudoDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\ReporteAvisoAnulacionDTO.cs" />
+    <Compile Include="Modelo\ReporteNoFacturadoDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\ReservaDTO.cs" />
+    <Compile Include="Modelo\AvisoAnulacion\SucursalDTO.cs" />
+    <Compile Include="Modelo\TemplateAvisoAnulacion.cs" />
+    <Compile Include="Modelo\VendedorDTO.cs" />
+    <Compile Include="Persistencia\BoletoDAO.cs" />
+    <Compile Include="Persistencia\BoletoDAOImpl.cs" />
+    <Compile Include="Persistencia\MyConexionOracle.cs" />
+    <Compile Include="Procesos\AnulacionSabre.cs" />
+    <Compile Include="Procesos\BoletoFactory.cs" />
+    <Compile Include="Reportes\EnvioReportes.cs" />
+    <Compile Include="Reportes\ProcesadorReporteAvisoAnulacion.cs" />
+    <Compile Include="Reportes\ProcesadorReporteNoEnPTA.cs" />
+    <Compile Include="Reportes\ProcesadorReporteNoFacturado.cs" />
+    <Compile Include="Procesos\ProcesoAnulacionAmadeus.cs" />
+    <Compile Include="Procesos\ServiceBoletoAmadeus.cs" />
+    <Compile Include="Procesos\ServiceBoletoSabre.cs" />
+    <Compile Include="Reportes\ReporteAvisoAnulacion.cs" />
+    <Compile Include="Reportes\ReporteFactory.cs" />
+    <Compile Include="Reportes\ReporteNoEnPTA.cs" />
+    <Compile Include="Reportes\ReporteNoFacturado.cs" />
+    <Compile Include="Utilitarios\Correo.cs" />
+    <Compile Include="Utilitarios\FileUtils.cs" />
+    <Compile Include="GestorLog.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\GestorProceso.cs" />
+    <Compile Include="Horario.cs" />
+    <Compile Include="Procesos\IProcesoRobot.cs" />
+    <Compile Include="Procesos\Main.cs" />
+    <Compile Include="Procesos\ProcesoAnulacion.cs" />
+    <Compile Include="Procesos\ProcesoAvisoAnulacion.cs" />
+    <Compile Include="Procesos\ProcesoAvisoNoEnPTA.cs" />
+    <Compile Include="Procesos\ProcesoAvisoNoFacturado.cs" />
+    <Compile Include="Procesos\ProcesoAvisoVoidDQBNoEnPTA.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs" />
+    <Compile Include="Procesos\ServiceBoleto.cs" />
+    <Compile Include="TipoProceso.cs" />
+    <Compile Include="Utilitarios\Utilitario.cs" />
+    <Compile Include="Utilitarios\UtilSession.cs" />
+    <Compile Include="Web References\GNM_ConsultaPTA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebServiceAmadeus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ProcesosGDS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="APP_AMADEUS_NM.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="APP_SABRE_AGCORP.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="APP_SABRE_NM.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\GNM_ConsultaPTA\classAerolineaC.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classAirTicketRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classArunk.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classBoletoPax.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classBoletosXConfirmacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classCiudad.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classCliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classConceptosEvaluacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classControlMorosidad.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classCuentaBancaria.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classDato.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classDatosTipoPasajero.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classDesignatePrinter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classDocumento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classDocumentosVencidos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classDsctExtra.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classEasyOnLine.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classEjecutivo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classEnvioCorreo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classFare.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classFeeTarifaBulkResultado.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classFile.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classFormaPago.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classGDS_Interface.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classGrupoInterno.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classIata.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classIgnoreTransaction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classLineaCredito.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classMotivoVoid.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPais.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPasajeros.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPermisos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPNR.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPromotionalShopping.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPromotor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPseudoBulkConceptos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPseudosBulkEvaluacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classPseudosTarifasNegociadas.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classRegulacionTarifa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classReporteConfirmaciones.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classReporteVentas.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classRespuesta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classSecuenciaPseudobulk.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classSession.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classSolicitudReemision.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classSubCodigo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classSucursalPunto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTarifa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTarifabulkFq.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTarifaRetenida.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTarifa_x_Tipo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTarjeta_.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTipoDocumentoEmision.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTipoPaxVuelo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTourCodeResultado.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTourCodesConceptos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTransaction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTurboCcChargeForm.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTurboDatosPax.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\classTurboPassengerRecipt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\FeeOpt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\GNM_ConsultaPTA.wsdl" />
+    <None Include="Web References\GNM_ConsultaPTA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\ReporteBoletosDelDias.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\robotBoletoPagoOtroDk.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\robotBoletoPendiente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GNM_ConsultaPTA\TCTicket.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\1ASIWTENNUE_PRD_20171103_214957.wsdl" />
+    <None Include="Web References\WebServiceAmadeus\Air_FlightInfoReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Air_FlightInfoReply_07_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Air_FlightInfo_07_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Air_SellFromRecommendationReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Air_SellFromRecommendationReply_05_2_IA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Air_SellFromRecommendation_05_2_IA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Command_CrypticReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Command_CrypticReply_07_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Command_Cryptic_07_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\DocIssuance_IssueTicketReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\DocIssuance_IssueTicketReply_09_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\DocIssuance_IssueTicket_09_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_AddMultiElements_10_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_Cancel_10_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_List.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_List_00_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_Reply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_Reply_10_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\PNR_Retrieve_10_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\SalesReports_DisplayQueryReportReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\SalesReports_DisplayQueryReportReply_10_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\SalesReports_DisplayQueryReport_10_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Security_AuthenticateReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Security_AuthenticateReply_06_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Security_Authenticate_06_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Security_SignOutReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Security_SignOutReply_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Security_SignOut_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CancelDocumentReplyTransactionResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CancelDocumentReply_11_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CancelDocument_11_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CheckEligibilityReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CheckEligibilityReply_13_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CheckEligibility_13_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CreateTSTFromPricingReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CreateTSTFromPricingReply_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_CreateTSTFromPricing_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_ProcessETicketReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_ProcessETicketReply_04_1_IA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_ProcessETicket_04_1_IA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_ReissueConfirmedPricingReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_ReissueConfirmedPricingReply_13_2_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_ReissueConfirmedPricing_13_2_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_RepricePNRWithBookingClassReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_RepricePNRWithBookingClassReply_12_2_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\Ticket_RepricePNRWithBookingClass_12_2_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebServiceAmadeus\WBS_Session-2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_AccountCodeRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_DatosComisionRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_DatosCotizacionRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_EmisionReservaRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_ExchangesRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_FacturacionRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_GuardarCambiosRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_RealeaseRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_ReservaRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_Session.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_Tarifas_RS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\CE_VoidearBoletoRS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\Ciudad.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\EndTransaction_RS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\FECHAS_VUELOS_DISPONIBLES_RS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\Pais.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\PrecioTotal_RS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\procesosgds.wsdl" />
+    <None Include="Web References\WS_ProcesosGDS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ProcesosGDS\REGULACIONES_RS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Librerias\GDS_MuevoMundoLog\GDS_NuevoMundoLog.vbproj">
+      <Project>{53c553d1-8f33-4117-a086-36ccec53f2ce}</Project>
+      <Name>GDS_NuevoMundoLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\GDS_NM_Mensajeria\GDS_NM_Mensajeria.vbproj">
+      <Project>{551cd4e2-0035-4630-a64a-596542fe20f7}</Project>
+      <Name>GDS_NM_Mensajeria</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\GDS_NM_WebServicesSabre\GDS_NM_WebServicesSabre.vbproj">
+      <Project>{ed2d13a2-0467-48cb-8bc5-4c3bc6694860}</Project>
+      <Name>GDS_NM_WebServicesSabre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\GDS_NuevoMundoDominio\GDS_NuevoMundoDominio.vbproj">
+      <Project>{67bc6d16-5e17-4976-98b2-d8a9e9b41ea8}</Project>
+      <Name>GDS_NuevoMundoDominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\GDS_NuevoMundoPersistencia\GDS_NuevoMundoPersistencia.vbproj">
+      <Project>{fc1b7702-8b63-4e56-b5ea-56cddd1f8bf7}</Project>
+      <Name>GDS_NuevoMundoPersistencia</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\Robot_GDS_Aviso_Voideo_SABRE\WSDL_ServiciosAmadeus\1ASIWTENNUE_PRD_20171103_214957.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServiceAmadeus\</RelPath>
+      <UpdateFromURL>D:\Robot_GDS_Aviso_Voideo_SABRE\WSDL_ServiciosAmadeus\1ASIWTENNUE_PRD_20171103_214957.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ROTOB_ANULACION_WebServiceAmadeus_AmadeusWebServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://vmgds01/gnmWS_KJ/GNM_ConsultaPTA.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GNM_ConsultaPTA\</RelPath>
+      <UpdateFromURL>http://vmgds01/gnmWS_KJ/GNM_ConsultaPTA.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ROTOB_ANULACION_GNM_ConsultaPTA_gnm</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://webservices.webfarefinder.com/procesos_gds/procesosgds.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ProcesosGDS\</RelPath>
+      <UpdateFromURL>http://webservices.webfarefinder.com/procesos_gds/procesosgds.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ROTOB_ANULACION_WS_ProcesosGDS_ProcesosGDS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\GNM_ConsultaPTA\GNM_ConsultaPTA.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dependencias\NuevoMundoSecurity.dll" />
+    <Content Include="Reportes\HTML\AvisoAnulacion_Tabla.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\HTML\AvisoAnulacion.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\HTML\AvisoNoEnPTA_Tabla.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\HTML\AvisoNoEnPTA.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\HTML\AvisoNoFacturados_Tabla.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\HTML\AvisoNoFacturados.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\HTML\EstructuraBaseCorreo.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web References\WS_ProcesosGDS\procesosgds.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

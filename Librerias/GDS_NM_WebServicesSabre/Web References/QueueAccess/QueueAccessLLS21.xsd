@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:stl="http://services.sabre.com/STL/v01" elementFormDefault="qualified" targetNamespace="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="STL_For_SabreProtocol_v.1.2.0.xsd" namespace="http://services.sabre.com/STL/v01" />
+  <xs:include schemaLocation="sws_common.xsd" />
+  <xs:element name="QueueAccessRS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="stl:ApplicationResults" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Line">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="DateTime" type="xs:string" />
+              <xs:element minOccurs="0" name="Group" type="xs:string" />
+              <xs:element minOccurs="0" name="POS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="Source">
+                      <xs:complexType>
+                        <xs:attribute name="AgentSine" type="xs:string" use="optional" />
+                        <xs:attribute name="PseudoCityCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="UniqueID">
+                <xs:complexType>
+                  <xs:attribute name="ID" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Paragraph">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

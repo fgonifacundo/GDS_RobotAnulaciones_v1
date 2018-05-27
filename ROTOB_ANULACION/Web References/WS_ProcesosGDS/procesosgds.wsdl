@@ -1,0 +1,3449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://gnm_pta.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://gnm_pta.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://gnm_pta.org/">
+      <s:element name="ObtenerSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="datosAplicacion" type="tns:CE_DatosAplicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_DatosAplicacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strPNR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strGDS" type="tns:CE_TipoGDS" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPseudo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strNameApp" type="tns:CE_Aplicaciones" />
+          <s:element minOccurs="1" maxOccurs="1" name="idFirmaSabre" type="tns:CE_FirmaGDS_Sabre" />
+          <s:element minOccurs="0" maxOccurs="1" name="OficinaKiu" type="tns:CE_OficinaKiu" />
+          <s:element minOccurs="0" maxOccurs="1" name="Json" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodigoSeguimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPseudoVenta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CE_TipoGDS">
+        <s:restriction base="s:string">
+          <s:enumeration value="GDS_AMADEUS" />
+          <s:enumeration value="GDS_SABRE" />
+          <s:enumeration value="GDS_KIU" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CE_Aplicaciones">
+        <s:restriction base="s:string">
+          <s:enumeration value="InteragenciaExtranet" />
+          <s:enumeration value="InteragenciaExtranetEmision" />
+          <s:enumeration value="InteragenciaExtranetVoid" />
+          <s:enumeration value="InteragenciasExtranetRemisiones" />
+          <s:enumeration value="InteragenciasExtranetAccountCode" />
+          <s:enumeration value="DemoNuevoMundo" />
+          <s:enumeration value="EasyShop" />
+          <s:enumeration value="DestinosIntranet" />
+          <s:enumeration value="Turbo" />
+          <s:enumeration value="SistemaCentral" />
+          <s:enumeration value="MotorWeb_SRV" />
+          <s:enumeration value="SabreRed" />
+          <s:enumeration value="FranquiciasExtranet" />
+          <s:enumeration value="FranquiciasExtranetEmision" />
+          <s:enumeration value="FranquiciasExtranetVoid" />
+          <s:enumeration value="FranquiciasExtranetRemisiones" />
+          <s:enumeration value="FranquiciasExtranetAccountCode" />
+          <s:enumeration value="RobotAnulaciones" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CE_FirmaGDS_Sabre">
+        <s:restriction base="s:string">
+          <s:enumeration value="Interagencias" />
+          <s:enumeration value="Diners" />
+          <s:enumeration value="AgCorp" />
+          <s:enumeration value="Destinos" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CE_OficinaKiu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AGENTE_KIU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TERMINAL_KIU" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerSesionResult" type="tns:CE_Session" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_Session">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strConversationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strToken" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecuenciaId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarReservaGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oReservaRQ" type="tns:CE_ReservaRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_ReservaRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CambiarPseudo" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RealizarDQB" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CE_DatosGenerales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="oDatosAplicacion" type="tns:CE_DatosAplicacion" />
+          <s:element minOccurs="0" maxOccurs="1" name="oDatosCliente" type="tns:CE_DatosCliente" />
+          <s:element minOccurs="0" maxOccurs="1" name="oDatosUsuario" type="tns:CE_DatosUsuario" />
+          <s:element minOccurs="0" maxOccurs="1" name="SESSION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strTipoTarifa" type="tns:CE_TipoTarifa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_DatosCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strDireccion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intTipoCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="strCondicionPago" type="tns:CE_CondicionPago" />
+          <s:element minOccurs="0" maxOccurs="1" name="strnroDocCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTipoDocCliente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblLimiteCredito" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblCreditoDisponible" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSubCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPromotor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="oTipoAccesoEmision" type="tns:TipoAccesoEmision" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFileReferencias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDKCliente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CE_CondicionPago">
+        <s:restriction base="s:string">
+          <s:enumeration value="CON" />
+          <s:enumeration value="CRED" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoAccesoEmision">
+        <s:restriction base="s:string">
+          <s:enumeration value="BASICA" />
+          <s:enumeration value="AUTONOMA_CR" />
+          <s:enumeration value="AUTONOMA_SR" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CE_DatosUsuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idUsuarioWeb" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="idUsuarioPTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodigoVendedor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idArea" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCorreoUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSucursal_Facturar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPunto_Facturar" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CE_TipoTarifa">
+        <s:restriction base="s:string">
+          <s:enumeration value="PL" />
+          <s:enumeration value="PV" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RecuperarReservaGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarReservaGDSResult" type="tns:CE_ReservaRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_ReservaRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="lstSegmentos" type="tns:ArrayOfCE_Segment" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstPasajeros" type="tns:ArrayOfCE_Passenger" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstBoletos" type="tns:ArrayOfCE_Boleto" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomePseudoCityCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AAA_PseudoCityCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PseudoCityCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerIdentifier" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreateDateTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreationAgent" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCadenaItinerario" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="needFoid" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="needDocs" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="cambioDK" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaxPredeterminado" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReservadeNMundo" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PermiteEmision" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PermiteVoid" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PermiteProcesoChanger" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PermiteProcesoRelease" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResponseServicio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoError" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajeError" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoWarning" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstWarning" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SESSION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="log_Proceso" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_Segment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_Segment" nillable="true" type="tns:CE_Segment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Segment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OriginLocation" type="tns:CE_Location" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationLocation" type="tns:CE_Location" />
+          <s:element minOccurs="0" maxOccurs="1" name="oTechnicalStop" type="tns:TechnicalStop" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureDateTime_Hora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalDateTime_Hora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatorShortName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarketingAirline_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodigoAerolinea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResBookDesigCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstFareBasis_ConceptoTC" type="tns:ArrayOfCE_FareBasisComision" />
+          <s:element minOccurs="0" maxOccurs="1" name="Equipment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarriageGrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFamilyFare" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AplicaReglaCCorporativo" type="s:boolean" />
+        </s:sequence>
+        <s:attribute name="Segmentid" type="s:int" use="required" />
+        <s:attribute name="SegmentNumber" type="s:int" use="required" />
+        <s:attribute name="oTIPO_SEGMENTO" type="tns:TIPO_SEGMENTO" use="required" />
+        <s:attribute name="Status" type="s:string" />
+        <s:attribute name="Secuencia" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="CE_Location">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="tns:Ciudad" />
+          <s:element minOccurs="0" maxOccurs="1" name="pais" type="tns:Pais" />
+          <s:element minOccurs="0" maxOccurs="1" name="codRegion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ciudad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="tipo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodCiudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNombre" type="s:string" />
+        </s:sequence>
+        <s:attribute name="codigo" type="s:string" />
+        <s:attribute name="strCiudad" type="s:string" />
+        <s:attribute name="esNacional" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:complexType name="Pais">
+        <s:attribute name="codPais" type="s:string" />
+        <s:attribute name="strPais" type="s:string" />
+      </s:complexType>
+      <s:complexType name="TechnicalStop">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="oCiudad" type="tns:CE_Location" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalDateTime_Hora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureDateTime_Hora" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_FareBasisComision">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_FareBasisComision" nillable="true" type="tns:CE_FareBasisComision" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_FareBasisComision">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strIdTipoPax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFareBasis" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TIPO_SEGMENTO">
+        <s:restriction base="s:string">
+          <s:enumeration value="AIR" />
+          <s:enumeration value="ARNK" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfCE_Passenger">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_Passenger" nillable="true" type="tns:CE_Passenger" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Passenger">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idPassenger" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GivenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassengerType" type="tns:CE_PassengerType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passenger_Doc" type="tns:CE_Passenger_Doc" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento_retornado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero_retornado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RUC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RUC_retornado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithInfant" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdultoAsociado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstaAsociadoConInf" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ssr_FOID" type="tns:SSR_FOID" />
+          <s:element minOccurs="0" maxOccurs="1" name="ssr_DOCS" type="tns:SSR_DOCS" />
+          <s:element minOccurs="0" maxOccurs="1" name="ssr_INFT" type="tns:SSR_INFT" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoFacturacionOriginal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImporteFeeParaEmision" type="s:string" />
+        </s:sequence>
+        <s:attribute name="Secuencia" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="CE_PassengerType">
+        <s:attribute name="IdTipoPax" type="s:string" />
+        <s:attribute name="Pertenece" type="s:string" />
+        <s:attribute name="Equivale" type="tns:TipoPasajero" use="required" />
+        <s:attribute name="Equivale_retornado" type="tns:TipoPasajero" use="required" />
+        <s:attribute name="esEditable" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:simpleType name="TipoPasajero">
+        <s:restriction base="s:string">
+          <s:enumeration value="SELECCIONE" />
+          <s:enumeration value="ADT" />
+          <s:enumeration value="CNN" />
+          <s:enumeration value="INF" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CE_Passenger_Doc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nroLinea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDscTipoDoc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strTipoDoc" type="tns:TipoDocumento" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNumeroDoc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strTipoDoc_retornado" type="tns:TipoDocumento" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNumeroDoc_retornado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoDocumento">
+        <s:restriction base="s:string">
+          <s:enumeration value="NI" />
+          <s:enumeration value="CE" />
+          <s:enumeration value="PP" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="SSR_FOID">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nroLinea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTipoDoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDscTipoDoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNumeroDoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Airline_Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SSR_DOCS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nroLinea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nac_Passenger" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nac_Pasaporte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NroPasaporte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha_Expiracion_Pasaporte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Airline_Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SSR_INFT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="nroLinea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAdultoAsociado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_Boleto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_Boleto" nillable="true" type="tns:CE_Boleto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Boleto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="esBoletoReserva" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoidearBoletoEnServicio" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oAutorizaNoVoid" type="tns:CE_AutorizaNoVoid" />
+          <s:element minOccurs="0" maxOccurs="1" name="oFacturacionBoleto" type="tns:CE_FacturacionBoleto" />
+        </s:sequence>
+        <s:attribute name="RPH" type="s:string" />
+        <s:attribute name="IdBoleto" type="s:string" />
+        <s:attribute name="eTicketNumber" type="s:string" />
+        <s:attribute name="PersonName" type="s:string" />
+        <s:attribute name="FechaEmision" type="s:string" />
+        <s:attribute name="PseudoEmision" type="s:string" />
+        <s:attribute name="Estado" type="s:string" />
+      </s:complexType>
+      <s:complexType name="CE_AutorizaNoVoid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ejecutivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_FacturacionBoleto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DkCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="File" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTipoStock" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Proveedor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iata" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Empresa" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Emitido" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Facturado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFechaEmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strBoletoAsociado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPaxReserva" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPersonName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDocumentoPax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumentoPax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstComprobanteBoleto" type="tns:ArrayOfCE_ComprobanteBoleto" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarcaVoid" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_ComprobanteBoleto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_ComprobanteBoleto" nillable="true" type="tns:CE_ComprobanteBoleto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_ComprobanteBoleto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdTipoComprobante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FacturaCabeza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroSerie" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Credenciales" type="tns:Credenciales" />
+      <s:complexType name="Credenciales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RecuperarReservaGDS_JSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strReservaRQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarReservaGDS_JSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarReservaGDS_JSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CotizacionReservaGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDatosCotizacionRQ" type="tns:CE_DatosCotizacionRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_DatosCotizacionRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="rebookPublicadas" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstPasajeros" type="tns:ArrayOfCE_Passenger" />
+              <s:element minOccurs="1" maxOccurs="1" name="CotizaTodosPasajeros" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstSegmentos" type="tns:ArrayOfCE_Segment" />
+              <s:element minOccurs="1" maxOccurs="1" name="CotizaTodosSegmentos" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCodigoCorporativo_AC" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ForzarCotizacionPL" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaxPredeterminado" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="seCambioTipoPasajero" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BuscarTarifaMasBajaPV" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="EvaluarModuloComercialFee" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCiudadDestinoPV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strLineaValidadoraPV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstTarifaNetaPorTipoPaxAmadeus" type="tns:ArrayOfCE_TarifaNetaXTipoPax" />
+              <s:element minOccurs="0" maxOccurs="1" name="PseudoCityCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_TarifaNetaXTipoPax">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_TarifaNetaXTipoPax" nillable="true" type="tns:CE_TarifaNetaXTipoPax" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_TarifaNetaXTipoPax">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PassengerType" type="tns:CE_PassengerType" />
+          <s:element minOccurs="0" maxOccurs="1" name="NetoTarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoReferenciaTST" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CotizacionReservaGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CotizacionReservaGDSResult" type="tns:CE_DatosCotizacionRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_DatosCotizacionRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MostrarTarifaAdicional" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="strLineaValidadora" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strNombreLineaValidadora" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstCiudadDestino" type="tns:ArrayOfString" />
+              <s:element minOccurs="1" maxOccurs="1" name="EjecutarModuloComision" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IngresarPrecioManual" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstMensajesCounter" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstConceptosEvaluadosPseudosBulk" type="tns:ArrayOfCE_ConceptosEvaluados" />
+              <s:element minOccurs="0" maxOccurs="1" name="oEvaluacionPseudosPrivadas" type="tns:CE_EvaluacionPseudosPrivadas" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstCotizacionXPseudo" type="tns:ArrayOfCE_CotizacionXPseudo" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstPasajeros" type="tns:ArrayOfCE_Passenger" />
+              <s:element minOccurs="0" maxOccurs="1" name="HeaderInformation" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strFamilyFare" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NoPermiteEmision" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_ConceptosEvaluados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_ConceptosEvaluados" nillable="true" type="tns:CE_ConceptosEvaluados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_ConceptosEvaluados">
+        <s:attribute name="CodigoConcepto" type="s:int" use="required" />
+        <s:attribute name="NombreConcepto" type="s:string" />
+        <s:attribute name="ValorConcepto" type="s:string" />
+      </s:complexType>
+      <s:complexType name="CE_EvaluacionPseudosPrivadas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lstConceptosEvaluadosPseudosBulk" type="tns:ArrayOfCE_ConceptosEvaluados" />
+          <s:element minOccurs="0" maxOccurs="1" name="oPseudosBulk" type="tns:ListaPseudosBulkEvaluacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListaPseudosBulkEvaluacion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClaseDefecto">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PseudosBulkEvaluacion" type="tns:ArrayOfPseudosBulkEvaluacion" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ClaseDefecto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ejecuto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errores" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Waiver">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClaseDefecto">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdTipoWaiver" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Monto" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Marca" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPseudosBulkEvaluacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PseudosBulkEvaluacion" nillable="true" type="tns:PseudosBulkEvaluacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PseudosBulkEvaluacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Regla" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="PseudosVenta" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="PseudosEmision" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_CotizacionXPseudo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_CotizacionXPseudo" nillable="true" type="tns:CE_CotizacionXPseudo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_CotizacionXPseudo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strTotalCotizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstAccountCode" type="tns:ArrayOfAccountCode" />
+          <s:element minOccurs="1" maxOccurs="1" name="intTotalPasajeros" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstCotizacionXTipoPax" type="tns:ArrayOfCE_CotizacionXTipoPax" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstWarning" type="tns:ArrayOfString" />
+        </s:sequence>
+        <s:attribute name="EsTarifaSeleccionada" type="s:boolean" use="required" />
+        <s:attribute name="strPseudoCotizador" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfAccountCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AccountCode" nillable="true" type="tns:AccountCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccountCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Air" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accountcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FaceValue" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_CotizacionXTipoPax">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_CotizacionXTipoPax" nillable="true" type="tns:CE_CotizacionXTipoPax" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_CotizacionXTipoPax">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PassengerType" type="tns:CE_PassengerType" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAcountCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="esfaceValue" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="intCantidad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMonedaNeto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NetoTarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMonedaIGV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IGV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TPA_Extension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalImpuesto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstImpuestos" type="tns:ArrayOfCE_Impuestos" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMonedaTotal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalTarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalTarifaFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oFeeOPT" type="tns:Waiver" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMoneda_Equiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NetoTarifa_Equiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstFareBasis" type="tns:ArrayOfCE_FareBasis" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstConceptosEvaluadosModuloFee" type="tns:ArrayOfCE_ConceptosEvaluados" />
+          <s:element minOccurs="0" maxOccurs="1" name="oModuloFee" type="tns:CE_ModuloFee" />
+          <s:element minOccurs="0" maxOccurs="1" name="oModuloComision" type="tns:CE_ModuloComision" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstConceptosEvaluadosComision" type="tns:ArrayOfCE_ConceptosEvaluados" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoReferenciaTST" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FareCalculation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstEndosos" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeEmitioCorrectamentSabre" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strImporteSinFacturar" type="s:string" />
+        </s:sequence>
+        <s:attribute name="EsTarifaSeleccionada" type="s:boolean" use="required" />
+        <s:attribute name="HostCommand" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_Impuestos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_Impuestos" nillable="true" type="tns:CE_Impuestos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Impuestos">
+        <s:attribute name="CodigoTax" type="s:string" />
+        <s:attribute name="NombreTax" type="s:string" />
+        <s:attribute name="CodigoTaxVenta" type="s:string" />
+        <s:attribute name="Importe" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_FareBasis">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_FareBasis" nillable="true" type="tns:CE_FareBasis" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_FareBasis">
+        <s:attribute name="SegmentNumber" type="s:string" />
+        <s:attribute name="strFareBasis" type="s:string" />
+      </s:complexType>
+      <s:complexType name="CE_ModuloFee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strPseudoOficina" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Regla" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsPorcentaje" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFeeMinimo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMontoFeeMinimo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFeeMaximo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMontoFeeMaximo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VentaXWeb" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MuestraWebAgencia" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoPermiteRuc" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmiteConTarjetaCredito" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_ModuloComision">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="No_Comision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="No_Tarifario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_Tourcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TourcodeCodigo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TourcodeProcesado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Factor_Meta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Factor_Meta_YQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nace_Cancelado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Over" type="s:string" />
+        </s:sequence>
+        <s:attribute name="es_EmisionWeb" type="s:int" use="required" />
+        <s:attribute name="Porc_Agencia" type="s:string" />
+        <s:attribute name="Porc_Comision" type="s:string" />
+      </s:complexType>
+      <s:element name="CotizacionReservaGDS_Json">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDatosCotizacionRQ" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rebookPublicadas" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CotizacionReservaGDS_JsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CotizacionReservaGDS_JsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluacionComisionGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDatosComisionRQ" type="tns:CE_DatosComisionRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_DatosComisionRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="strLineaValidadora" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCiudadDestComision" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strPseudoCotizador" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstCotizacionXTipoPax" type="tns:ArrayOfCE_CotizacionXTipoPax" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstSegmentos" type="tns:ArrayOfCE_Segment" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCodigoCorporativo_AC" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Emision_ConRuc" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="FormaDePagoEmision" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="EvaluacionComisionGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EvaluacionComisionGDSResult" type="tns:CE_DatosComisionRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_DatosComisionRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="lstDatosComisionDetRS" type="tns:ArrayOfCE_DatosComisionDetRS" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_DatosComisionDetRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_DatosComisionDetRS" nillable="true" type="tns:CE_DatosComisionDetRS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_DatosComisionDetRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="oModuloComision" type="tns:CE_ModuloComision" />
+          <s:element minOccurs="0" maxOccurs="1" name="oDescuentoExtra" type="tns:DescuentoExtra" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstConceptosEvaluados" type="tns:ArrayOfCE_ConceptosEvaluados" />
+        </s:sequence>
+        <s:attribute name="IdTipoPax" type="tns:TipoPasajero" use="required" />
+      </s:complexType>
+      <s:complexType name="DescuentoExtra">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClaseDefecto">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdCliente" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoReserva" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LineaAerea" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DsctExtra" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Vendedor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreVendedor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoCobroFee" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthDsctFecha" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthDsctFechaUpd" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="EvaluacionComisionGDS_Json">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDatosComisionRQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluacionComisionGDS_JsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EvaluacionComisionGDS_JsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmitirReservaGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oEmisionReservaRQ" type="tns:CE_EmisionReservaRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_EmisionReservaRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_FacturacionRQ">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ForzarCotizacionPL" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCodigoCorporativo_AC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strLanCorporate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MasdeUnaciudadDestino" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="needFoid" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="needDocs" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="oCotizacionXPseudo" type="tns:CE_CotizacionXPseudo" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmiteTodosSegmentos" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmiteTodosPasajeros" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IngresarPrecioManual" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="strFamilyFare" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RealizarFacturacion" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CE_FacturacionRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="oTipoTarifa" type="tns:CE_TipoTarifa" />
+              <s:element minOccurs="0" maxOccurs="1" name="oFormaPagoPL" type="tns:CE_FormaPagoBoletoPL" />
+              <s:element minOccurs="0" maxOccurs="1" name="oFormaPagoPV" type="tns:CE_FormaPagoBoletoPV" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCiudadDestino" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strLineaValidadora" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="oProvedorFee" type="tns:CE_ProvedorFee" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstSegmentos" type="tns:ArrayOfCE_Segment" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstPasajeros" type="tns:ArrayOfCE_Passenger" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstDatosComisionDetRS" type="tns:ArrayOfCE_DatosComisionDetRS" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreationAgent" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="GenerarLineaGEM" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="PasajeroEmpresa" type="tns:CE_PasajeroEmpresa" />
+              <s:element minOccurs="0" maxOccurs="1" name="strPseudoCotizador" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstCotizacionXTipoPax" type="tns:ArrayOfCE_CotizacionXTipoPax" />
+              <s:element minOccurs="1" maxOccurs="1" name="Subvencion" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CE_FormaPagoBoletoPL">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_FormaPagoBoleto">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="EsEmisionFactura" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CE_FormaPagoBoleto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="oFormaDePagoEmision" type="tns:FormaDePagoEmision" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMontoIGV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMontoCash" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oTarjetaCredito" type="tns:CE_TarjetaCredito" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="FormaDePagoEmision">
+        <s:restriction base="s:string">
+          <s:enumeration value="Cash" />
+          <s:enumeration value="TarjetaCredito" />
+          <s:enumeration value="Cash_TarjetaCredito" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CE_TarjetaCredito">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="oTipoTCredito" type="tns:TipoTCredito" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNroTCredito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNombreTitularTarjeta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFechaVencimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTipoDocTitular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNumeroDocTitular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodigoPais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNombreBanco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodigoSeguridad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCodigoAprobacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsTarjetaCreditoPTA" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdTarjetaCreditoPTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdReglaTarjetaCreditoPTA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoTCredito">
+        <s:restriction base="s:string">
+          <s:enumeration value="VI" />
+          <s:enumeration value="CA" />
+          <s:enumeration value="AX" />
+          <s:enumeration value="OTROS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CE_FormaPagoBoletoPV">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_FormaPagoBoleto">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="oAgenciaEmiteaPasajero" type="tns:CE_AgenciaEmiteaPasajero" />
+              <s:element minOccurs="1" maxOccurs="1" name="oAgenciaRecibira" type="tns:TipoComprobante" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CE_AgenciaEmiteaPasajero">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="oTipoComprobante" type="tns:TipoComprobante" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNroComprobante" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoComprobante">
+        <s:restriction base="s:string">
+          <s:enumeration value="FC" />
+          <s:enumeration value="BV" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CE_ProvedorFee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPagoFee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImporteFee" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_PasajeroEmpresa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroRuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EmitirReservaGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmitirReservaGDSResult" type="tns:CE_EmisionReservaRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_EmisionReservaRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="lstBoletoEmitido" type="tns:ArrayOfCE_BoletoEmitido" />
+              <s:element minOccurs="0" maxOccurs="1" name="lstMensajeCounter" type="tns:ArrayOfString" />
+              <s:element minOccurs="1" maxOccurs="1" name="IngresarPrecioManual" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="oAutorizaNoVoid" type="tns:CE_AutorizaNoVoid" />
+              <s:element minOccurs="1" maxOccurs="1" name="ExisteConexion" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_BoletoEmitido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_BoletoEmitido" nillable="true" type="tns:CE_BoletoEmitido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_BoletoEmitido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="oPasajero" type="tns:CE_Passenger" />
+          <s:element minOccurs="0" maxOccurs="1" name="strBoletoEmitido" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EmitirReservaGDS_Json">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strEmisionReservaRQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmitirReservaGDS_JsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmitirReservaGDS_JsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidearBoletosGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oVoidearBoletoRQ" type="tns:CE_VoidearBoletoRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_VoidearBoletoRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="lstBoletos" type="tns:ArrayOfCE_Boleto" />
+              <s:element minOccurs="1" maxOccurs="1" name="TipoAnulacion" type="tns:CE_Anulacion" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="CE_Anulacion">
+        <s:restriction base="s:string">
+          <s:enumeration value="Total" />
+          <s:enumeration value="Parcial" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="VoidearBoletosGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VoidearBoletosGDSResult" type="tns:CE_VoidearBoletoRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_VoidearBoletoRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="lstBoletosVoid" type="tns:ArrayOfCE_Boleto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RealizarFacturacionGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oFacturacionRQ" type="tns:CE_FacturacionRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarFacturacionGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarFacturacionGDSResult" type="tns:CE_FacturacionRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_FacturacionRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="EncriptacionGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCadena" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="oTIPO_ENCRIPTACION" type="tns:TIPO_ENCRIPTACION" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClaveEncript" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TIPO_ENCRIPTACION">
+        <s:restriction base="s:string">
+          <s:enumeration value="CREDENCIALES" />
+          <s:enumeration value="MD5" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="EncriptacionGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncriptacionGDSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DesEncriptacionGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCadena" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="oTIPO_ENCRIPTACION" type="tns:TIPO_ENCRIPTACION" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClaveEncript" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DesEncriptacionGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DesEncriptacionGDSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarSessionGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SESSION" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PSEUDO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GDS" type="tns:CE_TipoGDS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarSessionGDSResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RealizarReleaseGDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oRealeaseRQ" type="tns:CE_RealeaseRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_RealeaseRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="oReservaRS" type="tns:CE_ReservaRS" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RealizarReleaseGDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarReleaseGDSResult" type="tns:CE_RealeaseRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_RealeaseRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="EjecutoCorrectamente" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="EmitirReservaSabre2GDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oEmisionReservaRQ" type="tns:CE_EmisionReservaRQ" />
+            <s:element minOccurs="0" maxOccurs="1" name="oEmisionReservaRS" type="tns:CE_EmisionReservaRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmitirReservaSabre2GDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmitirReservaSabre2GDSResult" type="tns:CE_EmisionReservaRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGuardarCambiosPNR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objGuardarCambiosRQ" type="tns:CE_GuardarCambiosRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_GuardarCambiosRQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="wsGuardarCambiosPNRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsGuardarCambiosPNRResult" type="tns:CE_GuardarCambiosRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_GuardarCambiosRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Exito" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="wsVerificarClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_AccountCodeRQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objDatosGenerales" type="tns:CE_DatosGenerales" />
+          <s:element minOccurs="0" maxOccurs="1" name="objClienteAgencia" type="tns:CE_AC_ClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objReglaClienteAgencia" type="tns:CE_AC_ReglaClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objListaClienteAgencia" type="tns:CE_ListaClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objListaReglaClienteAgencia" type="tns:CE_ListaReglaClienteAgencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_AC_ClienteAgencia">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bolExiste" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="intID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="intDK_Agencia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="intIdCliente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNombreCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRUCCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFechaAlta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intEnDesuso" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajes" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="bolExito" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_AC_ReglaClienteAgencia">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="intIdCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="intRegla" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAerolinea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAccountCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFecheInicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strFechaFinal" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intEnDesuso" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajes" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="bolExito" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_ListaClienteAgencia">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bolExito" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstClienteAgencia" type="tns:ArrayOfCE_AC_ClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajes" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_AC_ClienteAgencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_AC_ClienteAgencia" nillable="true" type="tns:CE_AC_ClienteAgencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_ListaReglaClienteAgencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lstReglaClienteAgencia" type="tns:ArrayOfCE_AC_ReglaClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajes" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="bolExito" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_AC_ReglaClienteAgencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_AC_ReglaClienteAgencia" nillable="true" type="tns:CE_AC_ReglaClienteAgencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsVerificarClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsVerificarClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_AccountCodeRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objClienteAgencia" type="tns:CE_AC_ClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objReglaClienteAgencia" type="tns:CE_AC_ReglaClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objListaClienteAgencia" type="tns:CE_ListaClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objListaReglaClienteAgencia" type="tns:CE_ListaReglaClienteAgencia" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMensajes" type="tns:CE_Mensajes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Mensajes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoError" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoWarning" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajeError" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstWarning" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajeCounter" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsAgregarClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAgregarClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsAgregarClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsActualizaClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsActualizaClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsActualizaClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAgregarReglaClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAgregarReglaClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsAgregarReglaClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsActualizaReglaClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsActualizaReglaClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsActualizaReglaClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaClienteAgenciaIDAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaClienteAgenciaIDAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaClienteAgenciaIDAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaReglaClienteAgenciaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaReglaClienteAgenciaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaReglaClienteAgenciaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaReglaClienteAgenciaAerolineaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaReglaClienteAgenciaAerolineaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaReglaClienteAgenciaAerolineaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaReglaClienteAgenciaAerolineaFechaAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objAccountCodeRQ" type="tns:CE_AccountCodeRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaReglaClienteAgenciaAerolineaFechaAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaReglaClienteAgenciaAerolineaFechaAccountResult" type="tns:CE_AccountCodeRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListadoTarifas_EasyShopJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fareRQ" type="tns:CE_Tarifas_RQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_Tarifas_RQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Origen" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Destino" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaSalida" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaRetorno" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Orientacion" type="tns:Orientacion" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aerolinea" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TipoTarifa" type="tns:TipoTarifa" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoPasajero" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EjecutarModuloComercialPV" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="Orientacion">
+        <s:restriction base="s:string">
+          <s:enumeration value="OW" />
+          <s:enumeration value="RT" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoTarifa">
+        <s:restriction base="s:string">
+          <s:enumeration value="PL" />
+          <s:enumeration value="PV" />
+          <s:enumeration value="ALL" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ListadoTarifas_EasyShopJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListadoTarifas_EasyShopJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListadoTarifas_EasyShop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:CE_Tarifas_RQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListadoTarifas_EasyShopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListadoTarifas_EasyShopResult" type="tns:CE_Tarifas_RS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_Tarifas_RS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TarifasAgrupadas" type="tns:ListaGrupoFareTarifa" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListaTarifas" type="tns:ArrayOfCE_FareRS" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ListaGrupoFareTarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GrupoTarifa" type="tns:ArrayOfFareTarifa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFareTarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FareTarifa" nillable="true" type="tns:FareTarifa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FareTarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FareRS" type="tns:ArrayOfTarifa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tarifa" nillable="true" type="tns:Tarifa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Pseudo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RuleCategory" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DK" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PNR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AirLines" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassengerType" type="tns:ArrayOfCE_DatosTipoPasajero" />
+          <s:element minOccurs="0" maxOccurs="1" name="FareBasis" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseFare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxesFare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalFare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpirationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdvancePurchase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MinStay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaxStay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeeMinino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeeMaximo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeasonalApplication" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTarifaReal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_DatosTipoPasajero">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_DatosTipoPasajero" nillable="true" type="tns:CE_DatosTipoPasajero" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_DatosTipoPasajero">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pertenece" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Equivale" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_FareRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_FareRS" nillable="true" type="tns:CE_FareRS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_FareRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RuleCategory" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DK" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PNR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AirLines" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassengerType" type="tns:ArrayOfCE_DatosTipoPasajero" />
+          <s:element minOccurs="0" maxOccurs="1" name="FareBasis" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseFare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxesFare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalFare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpirationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdvancePurchase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MinStay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaxStay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeeMinino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeeMaximo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeasonalApplication" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pseudo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTarifaReal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HostCommand" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMensajeError" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstWarning" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Disponibilidad_FechasVuelos_EasyShop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:FECHAS_VUELOS_DISPONIBLES_RQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FECHAS_VUELOS_DISPONIBLES_RQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Pseudo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CiudadSalida" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CiudadLlegada" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aerolinea" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Orientacion" type="tns:Orientacion" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaSalida" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaLlegada" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FareBasis" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tarifa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoPasajero" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CantidadPasajeros" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Moneda" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Rango" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Step" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Disponibilidad_FechasVuelos_EasyShopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Disponibilidad_FechasVuelos_EasyShopResult" type="tns:FECHAS_VUELOS_DISPONIBLES_RS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FECHAS_VUELOS_DISPONIBLES_RS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FechasDisponiblesSalida" type="tns:ArrayOfListaFechasDisponibles" />
+              <s:element minOccurs="0" maxOccurs="1" name="VuelosDisponiblesSalida" type="tns:CE_VuelosDisponibles" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechasDisponiblesRetorno" type="tns:ArrayOfListaFechasDisponibles" />
+              <s:element minOccurs="0" maxOccurs="1" name="VuelosDisponiblesRetorno" type="tns:CE_VuelosDisponibles" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaSeleccionadaSalida" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaSeleccionadaRetorno" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfListaFechasDisponibles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListaFechasDisponibles" nillable="true" type="tns:ListaFechasDisponibles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListaFechasDisponibles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Dia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fechas" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_VuelosDisponibles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FechaOut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InBound" type="tns:CE_InBound" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetalleVuelosDisponibles" type="tns:ArrayOfCE_DetalleVuelosDisponibles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_InBound">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FechaIn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Farebasis" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Availability" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_DetalleVuelosDisponibles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_DetalleVuelosDisponibles" nillable="true" type="tns:CE_DetalleVuelosDisponibles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_DetalleVuelosDisponibles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Segmentos" type="tns:ArrayOfCE_Segment" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrecioTotal_EasyShop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:PrecioTotal_RQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrecioTotal_RQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Segmentos" type="tns:ArrayOfCE_Segment" />
+              <s:element minOccurs="1" maxOccurs="1" name="CantidadPasajeros" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CadenaPasajeros" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CadenaTipoPasajeros" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Pseudo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TipoTarifa" type="tns:TipoTarifa" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListaPasajeros" type="tns:ArrayOfPasajeros" />
+              <s:element minOccurs="1" maxOccurs="1" name="PrecioCotizado" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aerolinea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Farebasis" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPasajeros">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pasajeros" nillable="true" type="tns:Pasajeros" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pasajeros">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroPasajero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombrePasajero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoPasajero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documento" type="tns:ArrayOfDocumento" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPasajero" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Marca" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Infante" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdultoAsociado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SSR" type="tns:SSR_" />
+          <s:element minOccurs="0" maxOccurs="1" name="Asientos" type="tns:ArrayOfAsientos" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Documento" nillable="true" type="tns:Documento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Documento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SSR_">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pasaporte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NacPasaporte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaExpedicion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaExpiracion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAsientos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Asientos" nillable="true" type="tns:Asientos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Asientos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Segmento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SegmentStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationLocation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrecioTotal_EasyShopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrecioTotal_EasyShopResult" type="tns:PrecioTotal_RS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrecioTotal_RS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="PrecioTotal" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Precio_x_Persona" type="tns:ArrayOfPrecio_x_Persona" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPrecio_x_Persona">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Precio_x_Persona" nillable="true" type="tns:Precio_x_Persona" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Precio_x_Persona">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalImpuestos" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Igv" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TarifaNeta" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalxPersona" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreacionReserva_EasyShop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:PrecioTotal_RQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreacionReserva_EasyShopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreacionReserva_EasyShopResult" type="tns:EndTransaction_RS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EndTransaction_RS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoPNR" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimeLimit" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PrecioDiferentes" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="PrecioTotal" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Precio_x_Persona" type="tns:ArrayOfPrecio_x_Persona" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Regulaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:REGULACIONES_RQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="REGULACIONES_RQ">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CE_DatosGenerales">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CiudadOrigen" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CiudadDestino" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaSalida" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FareBasis" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TicketDesignator" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aerolinea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RPH" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Pseudo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FirmaGDS" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RegulacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegulacionesResult" type="tns:REGULACIONES_RS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="REGULACIONES_RS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Reglas" type="tns:ArrayOfCE_Reglas" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCE_Reglas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CE_Reglas" nillable="true" type="tns:CE_Reglas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Reglas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumRegulaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Texto" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsListaCiudad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:CE_DatosGenerales" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaCiudadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaCiudadResult" type="tns:ArrayOfCiudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCiudad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ciudad" nillable="true" type="tns:Ciudad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsListaPaises">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RQ" type="tns:CE_DatosGenerales" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsListaPaisesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsListaPaisesResult" type="tns:ArrayOfPais" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPais">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pais" nillable="true" type="tns:Pais" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsRecuperarBoletoExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExchangesRQ" type="tns:CE_ExchangesRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_ExchangesRQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="oReservaRS" type="tns:CE_ReservaRS" />
+          <s:element minOccurs="0" maxOccurs="1" name="objDatosGenerales" type="tns:CE_DatosGenerales" />
+          <s:element minOccurs="0" maxOccurs="1" name="objRelease" type="tns:CE_Release" />
+          <s:element minOccurs="0" maxOccurs="1" name="objCancelar" type="tns:CE_Cancelar" />
+          <s:element minOccurs="0" maxOccurs="1" name="objAgregar" type="tns:CE_Agregar" />
+          <s:element minOccurs="0" maxOccurs="1" name="strBoletoOriginal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objCalificadores" type="tns:CE_CalificadoresExchanges" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Release">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strPseudoRelease" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMensajes" type="tns:CE_Mensajes" />
+        </s:sequence>
+        <s:attribute name="strAAAPseudo" type="s:string" />
+        <s:attribute name="bolRelease" type="s:boolean" use="required" />
+        <s:attribute name="bolExito" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:complexType name="CE_Cancelar">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TipoAnulacion" type="tns:CE_Anulacion" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExitoAnular" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bolNoEsNuestro" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSegmentos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMensajeRespuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMensajes" type="tns:CE_Mensajes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_Agregar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lstSegment" type="tns:ArrayOfCE_Segment" />
+          <s:element minOccurs="1" maxOccurs="1" name="intCantidadPasajeros" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="boolExisto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="stRespuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMensajes" type="tns:CE_Mensajes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_CalificadoresExchanges">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strIdPassenger" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objPassengerType" type="tns:CE_PassengerType" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTicketOriginal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstSegmentos" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="objTransportador" type="tns:CE_Transportador" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTourCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCorporateId" type="s:string" />
+        </s:sequence>
+        <s:attribute name="enuTipoTarifa" type="tns:CE_TipoTarifa" use="required" />
+      </s:complexType>
+      <s:complexType name="CE_Transportador">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strPrefijo" type="s:string" />
+        </s:sequence>
+        <s:attribute name="strCodigoAerolinea" type="s:string" />
+        <s:attribute name="bolMensajeIGVExchange" type="s:boolean" use="required" />
+        <s:attribute name="bolAutorizaExchange" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:element name="wsRecuperarBoletoExchangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsRecuperarBoletoExchangeResult" type="tns:CE_ExchangesRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CE_ExchangesRS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseServicio">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="strCadenaItinerario" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strCadenaBoleto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="strDocumentoFacturacionOriginal" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="bolExisteItinerario" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="objCalificadores" type="tns:CE_CalificadoresExchanges" />
+              <s:element minOccurs="0" maxOccurs="1" name="strPseudoEmision" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="objConsultaAutomatedExchanges" type="tns:CE_ConsultaAutomatedExchangesRS" />
+              <s:element minOccurs="0" maxOccurs="1" name="objRelease" type="tns:CE_Release" />
+              <s:element minOccurs="0" maxOccurs="1" name="objCancelar" type="tns:CE_Cancelar" />
+              <s:element minOccurs="0" maxOccurs="1" name="objAgregar" type="tns:CE_Agregar" />
+              <s:element minOccurs="0" maxOccurs="1" name="objMensajes" type="tns:CE_Mensajes" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CE_ConsultaAutomatedExchangesRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMoneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objTarifaExchanges" type="tns:CE_TarifaExchanges" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMensajes" type="tns:CE_Mensajes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_TarifaExchanges">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objTarifaAuxiliar" type="tns:CE_TarifaAuxiliar" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMontosTarifaOriginal" type="tns:CE_MontosExchanges" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMontosTarifaNueva" type="tns:CE_MontosExchanges" />
+          <s:element minOccurs="0" maxOccurs="1" name="objMontosTarifaExchanges" type="tns:CE_MontosExchanges" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblTotalTarifa" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblTotalPenalidad" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblTotalFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblTotalPagar" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_TarifaAuxiliar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strFile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intSucursal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="intPunto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strStockTicket" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblIgvPta" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblTarifaAuxiliar" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblNetoTarifaAuxiliar" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblIgvTarifaAuxiliar" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CE_MontosExchanges">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="dblBase" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblImpuesto" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblTotal" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsCancelarSegmentosExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExchangesRQ" type="tns:CE_ExchangesRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsCancelarSegmentosExchangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsCancelarSegmentosExchangeResult" type="tns:CE_ExchangesRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAgregarSegmentosExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExchangesRQ" type="tns:CE_ExchangesRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAgregarSegmentosExchangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsAgregarSegmentosExchangeResult" type="tns:CE_ExchangesRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsConsultaPrecioItinerarioActualExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExchangesRQ" type="tns:CE_ExchangesRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsConsultaPrecioItinerarioActualExchangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsConsultaPrecioItinerarioActualExchangeResult" type="tns:CE_ExchangesRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsIgnorarCambiosExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExchangesRQ" type="tns:CE_ExchangesRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsIgnorarCambiosExchangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsIgnorarCambiosExchangeResult" type="tns:CE_ExchangesRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGuardarCambiosExchange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExchangesRQ" type="tns:CE_ExchangesRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGuardarCambiosExchangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsGuardarCambiosExchangeResult" type="tns:CE_ExchangesRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerSesion" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarReservaGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarReservaGDS" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarReservaGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarReservaGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarReservaGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarReservaGDS_JSONSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarReservaGDS_JSON" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarReservaGDS_JSONSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarReservaGDS_JSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarReservaGDS_JSONCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionReservaGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:CotizacionReservaGDS" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionReservaGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:CotizacionReservaGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionReservaGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionReservaGDS_JsonSoapIn">
+    <wsdl:part name="parameters" element="tns:CotizacionReservaGDS_Json" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionReservaGDS_JsonSoapOut">
+    <wsdl:part name="parameters" element="tns:CotizacionReservaGDS_JsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="CotizacionReservaGDS_JsonCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="EvaluacionComisionGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:EvaluacionComisionGDS" />
+  </wsdl:message>
+  <wsdl:message name="EvaluacionComisionGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:EvaluacionComisionGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EvaluacionComisionGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="EvaluacionComisionGDS_JsonSoapIn">
+    <wsdl:part name="parameters" element="tns:EvaluacionComisionGDS_Json" />
+  </wsdl:message>
+  <wsdl:message name="EvaluacionComisionGDS_JsonSoapOut">
+    <wsdl:part name="parameters" element="tns:EvaluacionComisionGDS_JsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="EvaluacionComisionGDS_JsonCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:EmitirReservaGDS" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:EmitirReservaGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaGDS_JsonSoapIn">
+    <wsdl:part name="parameters" element="tns:EmitirReservaGDS_Json" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaGDS_JsonSoapOut">
+    <wsdl:part name="parameters" element="tns:EmitirReservaGDS_JsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaGDS_JsonCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="VoidearBoletosGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:VoidearBoletosGDS" />
+  </wsdl:message>
+  <wsdl:message name="VoidearBoletosGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:VoidearBoletosGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="VoidearBoletosGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="RealizarFacturacionGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarFacturacionGDS" />
+  </wsdl:message>
+  <wsdl:message name="RealizarFacturacionGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarFacturacionGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarFacturacionGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="EncriptacionGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:EncriptacionGDS" />
+  </wsdl:message>
+  <wsdl:message name="EncriptacionGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:EncriptacionGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="DesEncriptacionGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:DesEncriptacionGDS" />
+  </wsdl:message>
+  <wsdl:message name="DesEncriptacionGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:DesEncriptacionGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CerrarSessionGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:CerrarSessionGDS" />
+  </wsdl:message>
+  <wsdl:message name="CerrarSessionGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:CerrarSessionGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarReleaseGDSSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarReleaseGDS" />
+  </wsdl:message>
+  <wsdl:message name="RealizarReleaseGDSSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarReleaseGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarReleaseGDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaSabre2GDSSoapIn">
+    <wsdl:part name="parameters" element="tns:EmitirReservaSabre2GDS" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaSabre2GDSSoapOut">
+    <wsdl:part name="parameters" element="tns:EmitirReservaSabre2GDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmitirReservaSabre2GDSCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsGuardarCambiosPNRSoapIn">
+    <wsdl:part name="parameters" element="tns:wsGuardarCambiosPNR" />
+  </wsdl:message>
+  <wsdl:message name="wsGuardarCambiosPNRSoapOut">
+    <wsdl:part name="parameters" element="tns:wsGuardarCambiosPNRResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsGuardarCambiosPNRCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsVerificarClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsVerificarClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsVerificarClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsVerificarClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsVerificarClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsAgregarClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsAgregarClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsActualizaClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsActualizaClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsActualizaClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsActualizaClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsActualizaClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarReglaClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsAgregarReglaClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarReglaClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsAgregarReglaClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarReglaClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsActualizaReglaClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsActualizaReglaClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsActualizaReglaClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsActualizaReglaClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsActualizaReglaClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsListaClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsListaClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsListaClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsListaClienteAgenciaIDAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaClienteAgenciaIDAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsListaClienteAgenciaIDAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaClienteAgenciaIDAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsListaClienteAgenciaIDAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaReglaClienteAgenciaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaReglaClienteAgenciaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAerolineaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaReglaClienteAgenciaAerolineaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAerolineaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaReglaClienteAgenciaAerolineaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAerolineaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAerolineaFechaAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaReglaClienteAgenciaAerolineaFechaAccount" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAerolineaFechaAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaReglaClienteAgenciaAerolineaFechaAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsListaReglaClienteAgenciaAerolineaFechaAccountCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="ListadoTarifas_EasyShopJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:ListadoTarifas_EasyShopJSON" />
+  </wsdl:message>
+  <wsdl:message name="ListadoTarifas_EasyShopJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:ListadoTarifas_EasyShopJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListadoTarifas_EasyShopSoapIn">
+    <wsdl:part name="parameters" element="tns:ListadoTarifas_EasyShop" />
+  </wsdl:message>
+  <wsdl:message name="ListadoTarifas_EasyShopSoapOut">
+    <wsdl:part name="parameters" element="tns:ListadoTarifas_EasyShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListadoTarifas_EasyShopCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="Disponibilidad_FechasVuelos_EasyShopSoapIn">
+    <wsdl:part name="parameters" element="tns:Disponibilidad_FechasVuelos_EasyShop" />
+  </wsdl:message>
+  <wsdl:message name="Disponibilidad_FechasVuelos_EasyShopSoapOut">
+    <wsdl:part name="parameters" element="tns:Disponibilidad_FechasVuelos_EasyShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="Disponibilidad_FechasVuelos_EasyShopCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="PrecioTotal_EasyShopSoapIn">
+    <wsdl:part name="parameters" element="tns:PrecioTotal_EasyShop" />
+  </wsdl:message>
+  <wsdl:message name="PrecioTotal_EasyShopSoapOut">
+    <wsdl:part name="parameters" element="tns:PrecioTotal_EasyShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrecioTotal_EasyShopCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="CreacionReserva_EasyShopSoapIn">
+    <wsdl:part name="parameters" element="tns:CreacionReserva_EasyShop" />
+  </wsdl:message>
+  <wsdl:message name="CreacionReserva_EasyShopSoapOut">
+    <wsdl:part name="parameters" element="tns:CreacionReserva_EasyShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreacionReserva_EasyShopCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="RegulacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:Regulaciones" />
+  </wsdl:message>
+  <wsdl:message name="RegulacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:RegulacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegulacionesCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsListaCiudadSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaCiudad" />
+  </wsdl:message>
+  <wsdl:message name="wsListaCiudadSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsListaPaisesSoapIn">
+    <wsdl:part name="parameters" element="tns:wsListaPaises" />
+  </wsdl:message>
+  <wsdl:message name="wsListaPaisesSoapOut">
+    <wsdl:part name="parameters" element="tns:wsListaPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsRecuperarBoletoExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsRecuperarBoletoExchange" />
+  </wsdl:message>
+  <wsdl:message name="wsRecuperarBoletoExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsRecuperarBoletoExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsRecuperarBoletoExchangeCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsCancelarSegmentosExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsCancelarSegmentosExchange" />
+  </wsdl:message>
+  <wsdl:message name="wsCancelarSegmentosExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsCancelarSegmentosExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCancelarSegmentosExchangeCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarSegmentosExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsAgregarSegmentosExchange" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarSegmentosExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsAgregarSegmentosExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsAgregarSegmentosExchangeCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaPrecioItinerarioActualExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsConsultaPrecioItinerarioActualExchange" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaPrecioItinerarioActualExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsConsultaPrecioItinerarioActualExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaPrecioItinerarioActualExchangeCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsIgnorarCambiosExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsIgnorarCambiosExchange" />
+  </wsdl:message>
+  <wsdl:message name="wsIgnorarCambiosExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsIgnorarCambiosExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsIgnorarCambiosExchangeCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:message name="wsGuardarCambiosExchangeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsGuardarCambiosExchange" />
+  </wsdl:message>
+  <wsdl:message name="wsGuardarCambiosExchangeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsGuardarCambiosExchangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsGuardarCambiosExchangeCredenciales">
+    <wsdl:part name="Credenciales" element="tns:Credenciales" />
+  </wsdl:message>
+  <wsdl:portType name="ProcesosGDSSoap">
+    <wsdl:operation name="ObtenerSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener el Token de la Sesion</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerSesionSoapIn" />
+      <wsdl:output message="tns:ObtenerSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarReservaGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :10/06/2016 16:25 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Recupera la reserva de los diferentes GDSs</wsdl:documentation>
+      <wsdl:input message="tns:RecuperarReservaGDSSoapIn" />
+      <wsdl:output message="tns:RecuperarReservaGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarReservaGDS_JSON">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :10/06/2016 16:25 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Recupera la reserva de los diferentes GDSs recibe como parametro un Json y retorna un Json</wsdl:documentation>
+      <wsdl:input message="tns:RecuperarReservaGDS_JSONSoapIn" />
+      <wsdl:output message="tns:RecuperarReservaGDS_JSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionReservaGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :15/07/2016 16:25 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Tarifa la reserva de los diferentes GDSs</wsdl:documentation>
+      <wsdl:input message="tns:CotizacionReservaGDSSoapIn" />
+      <wsdl:output message="tns:CotizacionReservaGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionReservaGDS_Json">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :15/07/2016 16:25 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Tarifa la reserva de los diferentes GDSs recibe como parametro un Json y retorna un Json</wsdl:documentation>
+      <wsdl:input message="tns:CotizacionReservaGDS_JsonSoapIn" />
+      <wsdl:output message="tns:CotizacionReservaGDS_JsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluacionComisionGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :05/08/2016 18:28 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Evalua los conceptos de la reserva para retornar la comisión por Pasajeros</wsdl:documentation>
+      <wsdl:input message="tns:EvaluacionComisionGDSSoapIn" />
+      <wsdl:output message="tns:EvaluacionComisionGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluacionComisionGDS_Json">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :05/08/2016 18:28 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Evalua los conceptos de la reserva para retornar la comisión por Pasajeros recibe como parametro un Json y retorna un Json</wsdl:documentation>
+      <wsdl:input message="tns:EvaluacionComisionGDS_JsonSoapIn" />
+      <wsdl:output message="tns:EvaluacionComisionGDS_JsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :00/00/00 00:00 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Emite la reserva de los diferentes GDSs</wsdl:documentation>
+      <wsdl:input message="tns:EmitirReservaGDSSoapIn" />
+      <wsdl:output message="tns:EmitirReservaGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaGDS_Json">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :00/00/00 00:00 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Emite la reserva de los diferentes GDSs recibe como parametro un Json y retorna un Json</wsdl:documentation>
+      <wsdl:input message="tns:EmitirReservaGDS_JsonSoapIn" />
+      <wsdl:output message="tns:EmitirReservaGDS_JsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidearBoletosGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ejecuta el voideo de los boletos activos</wsdl:documentation>
+      <wsdl:input message="tns:VoidearBoletosGDSSoapIn" />
+      <wsdl:output message="tns:VoidearBoletosGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarFacturacionGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :03/02/2017 16:25 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Realiza Facturación de los diferentes GDSs</wsdl:documentation>
+      <wsdl:input message="tns:RealizarFacturacionGDSSoapIn" />
+      <wsdl:output message="tns:RealizarFacturacionGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncriptacionGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :00/00/00 00:00 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Realiza Encriptación bajo el Tipo MD5 o Credenciales</wsdl:documentation>
+      <wsdl:input message="tns:EncriptacionGDSSoapIn" />
+      <wsdl:output message="tns:EncriptacionGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DesEncriptacionGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :00/00/00 00:00 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Realiza DesEncriptación bajo el Tipo MD5 o Credenciales</wsdl:documentation>
+      <wsdl:input message="tns:DesEncriptacionGDSSoapIn" />
+      <wsdl:output message="tns:DesEncriptacionGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSessionGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cierra la Sessión de los diferentes GDSs</wsdl:documentation>
+      <wsdl:input message="tns:CerrarSessionGDSSoapIn" />
+      <wsdl:output message="tns:CerrarSessionGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarReleaseGDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :28/02/2017 AUTOR :Javier Matto Choque &lt;br/&gt;FUNCION :   Devuelve la reserva a la agencia correspendiente - Recordar que solo se puede hacer Release a Agencias diferentes de CONTADO</wsdl:documentation>
+      <wsdl:input message="tns:RealizarReleaseGDSSoapIn" />
+      <wsdl:output message="tns:RealizarReleaseGDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaSabre2GDS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :00/00/00 00:00 AUTOR :HUGO &lt;br/&gt;FUNCION :   Emite la reserva de los diferentes GDSs</wsdl:documentation>
+      <wsdl:input message="tns:EmitirReservaSabre2GDSSoapIn" />
+      <wsdl:output message="tns:EmitirReservaSabre2GDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsGuardarCambiosPNR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :00/00/00 00:00 AUTOR :HUGO &lt;br/&gt;FUNCION :   Guarda los cambios realizados en la reserva</wsdl:documentation>
+      <wsdl:input message="tns:wsGuardarCambiosPNRSoapIn" />
+      <wsdl:output message="tns:wsGuardarCambiosPNRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsVerificarClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifica si el cliente de la agencia ya existe en la base de datos</wsdl:documentation>
+      <wsdl:input message="tns:wsVerificarClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsVerificarClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea un nuevo cliente para la agencia</wsdl:documentation>
+      <wsdl:input message="tns:wsAgregarClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsAgregarClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsActualizaClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza el registro del cliente de la agencia</wsdl:documentation>
+      <wsdl:input message="tns:wsActualizaClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsActualizaClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarReglaClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega una regla account code para un cliente de agencia</wsdl:documentation>
+      <wsdl:input message="tns:wsAgregarReglaClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsAgregarReglaClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsActualizaReglaClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza regla account code para un cliente de agencia</wsdl:documentation>
+      <wsdl:input message="tns:wsActualizaReglaClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsActualizaReglaClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista clientes de agencia</wsdl:documentation>
+      <wsdl:input message="tns:wsListaClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsListaClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaClienteAgenciaIDAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista clientes de agencia por ID</wsdl:documentation>
+      <wsdl:input message="tns:wsListaClienteAgenciaIDAccountSoapIn" />
+      <wsdl:output message="tns:wsListaClienteAgenciaIDAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista reglas account code de un cliente de agencia</wsdl:documentation>
+      <wsdl:input message="tns:wsListaReglaClienteAgenciaAccountSoapIn" />
+      <wsdl:output message="tns:wsListaReglaClienteAgenciaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAerolineaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista reglas account code de un cliente de agencia por aerolinea</wsdl:documentation>
+      <wsdl:input message="tns:wsListaReglaClienteAgenciaAerolineaAccountSoapIn" />
+      <wsdl:output message="tns:wsListaReglaClienteAgenciaAerolineaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAerolineaFechaAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lista reglas account code de un cliente de agencia por aerolinea</wsdl:documentation>
+      <wsdl:input message="tns:wsListaReglaClienteAgenciaAerolineaFechaAccountSoapIn" />
+      <wsdl:output message="tns:wsListaReglaClienteAgenciaAerolineaFechaAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoTarifas_EasyShopJSON">
+      <wsdl:input message="tns:ListadoTarifas_EasyShopJSONSoapIn" />
+      <wsdl:output message="tns:ListadoTarifas_EasyShopJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoTarifas_EasyShop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION :  Devuelve todas las tarifas segun tipo de tarifa y reglas cargadas</wsdl:documentation>
+      <wsdl:input message="tns:ListadoTarifas_EasyShopSoapIn" />
+      <wsdl:output message="tns:ListadoTarifas_EasyShopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Disponibilidad_FechasVuelos_EasyShop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION :  Fechas y vuelos disponibles</wsdl:documentation>
+      <wsdl:input message="tns:Disponibilidad_FechasVuelos_EasyShopSoapIn" />
+      <wsdl:output message="tns:Disponibilidad_FechasVuelos_EasyShopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrecioTotal_EasyShop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION : Precio total de una tarifa con la cantidad de pasajeros</wsdl:documentation>
+      <wsdl:input message="tns:PrecioTotal_EasyShopSoapIn" />
+      <wsdl:output message="tns:PrecioTotal_EasyShopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreacionReserva_EasyShop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION : Crea la reserva del EasyShop</wsdl:documentation>
+      <wsdl:input message="tns:CreacionReserva_EasyShopSoapIn" />
+      <wsdl:output message="tns:CreacionReserva_EasyShopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Regulaciones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION : Lista las regulaciones de una tarifa</wsdl:documentation>
+      <wsdl:input message="tns:RegulacionesSoapIn" />
+      <wsdl:output message="tns:RegulacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaCiudad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION : Lista las regulaciones de una tarifa</wsdl:documentation>
+      <wsdl:input message="tns:wsListaCiudadSoapIn" />
+      <wsdl:output message="tns:wsListaCiudadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsListaPaises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FECHA CREACION :02/09/2016 16:25 AUTOR :Mario Huaman Puente &lt;br/&gt;FUNCION : Lista las regulaciones de una tarifa</wsdl:documentation>
+      <wsdl:input message="tns:wsListaPaisesSoapIn" />
+      <wsdl:output message="tns:wsListaPaisesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRecuperarBoletoExchange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recupera la reserva para reemisiones</wsdl:documentation>
+      <wsdl:input message="tns:wsRecuperarBoletoExchangeSoapIn" />
+      <wsdl:output message="tns:wsRecuperarBoletoExchangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsCancelarSegmentosExchange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancelamos Segmentos</wsdl:documentation>
+      <wsdl:input message="tns:wsCancelarSegmentosExchangeSoapIn" />
+      <wsdl:output message="tns:wsCancelarSegmentosExchangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarSegmentosExchange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Segmentos</wsdl:documentation>
+      <wsdl:input message="tns:wsAgregarSegmentosExchangeSoapIn" />
+      <wsdl:output message="tns:wsAgregarSegmentosExchangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaPrecioItinerarioActualExchange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta Precio Remisión</wsdl:documentation>
+      <wsdl:input message="tns:wsConsultaPrecioItinerarioActualExchangeSoapIn" />
+      <wsdl:output message="tns:wsConsultaPrecioItinerarioActualExchangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsIgnorarCambiosExchange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ignorar Cambios Realizados</wsdl:documentation>
+      <wsdl:input message="tns:wsIgnorarCambiosExchangeSoapIn" />
+      <wsdl:output message="tns:wsIgnorarCambiosExchangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsGuardarCambiosExchange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Guardar Cambios Realizados</wsdl:documentation>
+      <wsdl:input message="tns:wsGuardarCambiosExchangeSoapIn" />
+      <wsdl:output message="tns:wsGuardarCambiosExchangeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcesosGDSSoap" type="tns:ProcesosGDSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerSesion">
+      <soap:operation soapAction="http://gnm_pta.org/ObtenerSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarReservaGDS">
+      <soap:operation soapAction="http://gnm_pta.org/RecuperarReservaGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarReservaGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarReservaGDS_JSON">
+      <soap:operation soapAction="http://gnm_pta.org/RecuperarReservaGDS_JSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RecuperarReservaGDS_JSONCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionReservaGDS">
+      <soap:operation soapAction="http://gnm_pta.org/CotizacionReservaGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CotizacionReservaGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionReservaGDS_Json">
+      <soap:operation soapAction="http://gnm_pta.org/CotizacionReservaGDS_Json" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CotizacionReservaGDS_JsonCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluacionComisionGDS">
+      <soap:operation soapAction="http://gnm_pta.org/EvaluacionComisionGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EvaluacionComisionGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluacionComisionGDS_Json">
+      <soap:operation soapAction="http://gnm_pta.org/EvaluacionComisionGDS_Json" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EvaluacionComisionGDS_JsonCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaGDS">
+      <soap:operation soapAction="http://gnm_pta.org/EmitirReservaGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EmitirReservaGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaGDS_Json">
+      <soap:operation soapAction="http://gnm_pta.org/EmitirReservaGDS_Json" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EmitirReservaGDS_JsonCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidearBoletosGDS">
+      <soap:operation soapAction="http://gnm_pta.org/VoidearBoletosGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VoidearBoletosGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarFacturacionGDS">
+      <soap:operation soapAction="http://gnm_pta.org/RealizarFacturacionGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RealizarFacturacionGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncriptacionGDS">
+      <soap:operation soapAction="http://gnm_pta.org/EncriptacionGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesEncriptacionGDS">
+      <soap:operation soapAction="http://gnm_pta.org/DesEncriptacionGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSessionGDS">
+      <soap:operation soapAction="http://gnm_pta.org/CerrarSessionGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarReleaseGDS">
+      <soap:operation soapAction="http://gnm_pta.org/RealizarReleaseGDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RealizarReleaseGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaSabre2GDS">
+      <soap:operation soapAction="http://gnm_pta.org/EmitirReservaSabre2GDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EmitirReservaSabre2GDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGuardarCambiosPNR">
+      <soap:operation soapAction="http://gnm_pta.org/wsGuardarCambiosPNR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsGuardarCambiosPNRCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsVerificarClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsVerificarClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsVerificarClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsAgregarClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsAgregarClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsActualizaClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsActualizaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsActualizaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarReglaClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsAgregarReglaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsAgregarReglaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsActualizaReglaClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsActualizaReglaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsActualizaReglaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsListaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaClienteAgenciaIDAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaClienteAgenciaIDAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsListaClienteAgenciaIDAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaReglaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsListaReglaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAerolineaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaReglaClienteAgenciaAerolineaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsListaReglaClienteAgenciaAerolineaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAerolineaFechaAccount">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaReglaClienteAgenciaAerolineaFechaAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsListaReglaClienteAgenciaAerolineaFechaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListadoTarifas_EasyShopJSON">
+      <soap:operation soapAction="http://gnm_pta.org/ListadoTarifas_EasyShopJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListadoTarifas_EasyShop">
+      <soap:operation soapAction="http://gnm_pta.org/ListadoTarifas_EasyShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListadoTarifas_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disponibilidad_FechasVuelos_EasyShop">
+      <soap:operation soapAction="http://gnm_pta.org/Disponibilidad_FechasVuelos_EasyShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Disponibilidad_FechasVuelos_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrecioTotal_EasyShop">
+      <soap:operation soapAction="http://gnm_pta.org/PrecioTotal_EasyShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PrecioTotal_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreacionReserva_EasyShop">
+      <soap:operation soapAction="http://gnm_pta.org/CreacionReserva_EasyShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreacionReserva_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Regulaciones">
+      <soap:operation soapAction="http://gnm_pta.org/Regulaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegulacionesCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaCiudad">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaPaises">
+      <soap:operation soapAction="http://gnm_pta.org/wsListaPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRecuperarBoletoExchange">
+      <soap:operation soapAction="http://gnm_pta.org/wsRecuperarBoletoExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsRecuperarBoletoExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsCancelarSegmentosExchange">
+      <soap:operation soapAction="http://gnm_pta.org/wsCancelarSegmentosExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsCancelarSegmentosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarSegmentosExchange">
+      <soap:operation soapAction="http://gnm_pta.org/wsAgregarSegmentosExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsAgregarSegmentosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaPrecioItinerarioActualExchange">
+      <soap:operation soapAction="http://gnm_pta.org/wsConsultaPrecioItinerarioActualExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsConsultaPrecioItinerarioActualExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsIgnorarCambiosExchange">
+      <soap:operation soapAction="http://gnm_pta.org/wsIgnorarCambiosExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsIgnorarCambiosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGuardarCambiosExchange">
+      <soap:operation soapAction="http://gnm_pta.org/wsGuardarCambiosExchange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:wsGuardarCambiosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProcesosGDSSoap12" type="tns:ProcesosGDSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerSesion">
+      <soap12:operation soapAction="http://gnm_pta.org/ObtenerSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarReservaGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/RecuperarReservaGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarReservaGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarReservaGDS_JSON">
+      <soap12:operation soapAction="http://gnm_pta.org/RecuperarReservaGDS_JSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RecuperarReservaGDS_JSONCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionReservaGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/CotizacionReservaGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CotizacionReservaGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CotizacionReservaGDS_Json">
+      <soap12:operation soapAction="http://gnm_pta.org/CotizacionReservaGDS_Json" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CotizacionReservaGDS_JsonCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluacionComisionGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/EvaluacionComisionGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EvaluacionComisionGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluacionComisionGDS_Json">
+      <soap12:operation soapAction="http://gnm_pta.org/EvaluacionComisionGDS_Json" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EvaluacionComisionGDS_JsonCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/EmitirReservaGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EmitirReservaGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaGDS_Json">
+      <soap12:operation soapAction="http://gnm_pta.org/EmitirReservaGDS_Json" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EmitirReservaGDS_JsonCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidearBoletosGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/VoidearBoletosGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VoidearBoletosGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarFacturacionGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/RealizarFacturacionGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RealizarFacturacionGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncriptacionGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/EncriptacionGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesEncriptacionGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/DesEncriptacionGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSessionGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/CerrarSessionGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarReleaseGDS">
+      <soap12:operation soapAction="http://gnm_pta.org/RealizarReleaseGDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RealizarReleaseGDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReservaSabre2GDS">
+      <soap12:operation soapAction="http://gnm_pta.org/EmitirReservaSabre2GDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EmitirReservaSabre2GDSCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGuardarCambiosPNR">
+      <soap12:operation soapAction="http://gnm_pta.org/wsGuardarCambiosPNR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsGuardarCambiosPNRCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsVerificarClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsVerificarClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsVerificarClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsAgregarClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsAgregarClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsActualizaClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsActualizaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsActualizaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarReglaClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsAgregarReglaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsAgregarReglaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsActualizaReglaClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsActualizaReglaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsActualizaReglaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsListaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaClienteAgenciaIDAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaClienteAgenciaIDAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsListaClienteAgenciaIDAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaReglaClienteAgenciaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsListaReglaClienteAgenciaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAerolineaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaReglaClienteAgenciaAerolineaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsListaReglaClienteAgenciaAerolineaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaReglaClienteAgenciaAerolineaFechaAccount">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaReglaClienteAgenciaAerolineaFechaAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsListaReglaClienteAgenciaAerolineaFechaAccountCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListadoTarifas_EasyShopJSON">
+      <soap12:operation soapAction="http://gnm_pta.org/ListadoTarifas_EasyShopJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListadoTarifas_EasyShop">
+      <soap12:operation soapAction="http://gnm_pta.org/ListadoTarifas_EasyShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListadoTarifas_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disponibilidad_FechasVuelos_EasyShop">
+      <soap12:operation soapAction="http://gnm_pta.org/Disponibilidad_FechasVuelos_EasyShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Disponibilidad_FechasVuelos_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrecioTotal_EasyShop">
+      <soap12:operation soapAction="http://gnm_pta.org/PrecioTotal_EasyShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PrecioTotal_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreacionReserva_EasyShop">
+      <soap12:operation soapAction="http://gnm_pta.org/CreacionReserva_EasyShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreacionReserva_EasyShopCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Regulaciones">
+      <soap12:operation soapAction="http://gnm_pta.org/Regulaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegulacionesCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaCiudad">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaCiudad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsListaPaises">
+      <soap12:operation soapAction="http://gnm_pta.org/wsListaPaises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRecuperarBoletoExchange">
+      <soap12:operation soapAction="http://gnm_pta.org/wsRecuperarBoletoExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsRecuperarBoletoExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsCancelarSegmentosExchange">
+      <soap12:operation soapAction="http://gnm_pta.org/wsCancelarSegmentosExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsCancelarSegmentosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAgregarSegmentosExchange">
+      <soap12:operation soapAction="http://gnm_pta.org/wsAgregarSegmentosExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsAgregarSegmentosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaPrecioItinerarioActualExchange">
+      <soap12:operation soapAction="http://gnm_pta.org/wsConsultaPrecioItinerarioActualExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsConsultaPrecioItinerarioActualExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsIgnorarCambiosExchange">
+      <soap12:operation soapAction="http://gnm_pta.org/wsIgnorarCambiosExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsIgnorarCambiosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGuardarCambiosExchange">
+      <soap12:operation soapAction="http://gnm_pta.org/wsGuardarCambiosExchange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:wsGuardarCambiosExchangeCredenciales" part="Credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcesosGDS">
+    <wsdl:port name="ProcesosGDSSoap" binding="tns:ProcesosGDSSoap">
+      <soap:address location="http://webservices.webfarefinder.com/procesos_gds/procesosgds.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProcesosGDSSoap12" binding="tns:ProcesosGDSSoap12">
+      <soap12:address location="http://webservices.webfarefinder.com/procesos_gds/procesosgds.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

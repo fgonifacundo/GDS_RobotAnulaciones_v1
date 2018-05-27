@@ -1,0 +1,24 @@
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.dll
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.pdb
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.xml
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.Resources.resources
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.vbproj.GenerateResource.Cache
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.dll
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.xml
+C:\Proyecto Sourcesafe\GNM\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.Resources.resources
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.vbproj.GenerateResource.Cache
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\bin\Debug\GDS_NuevoMundoPersistencia.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.Resources.resources
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.vbproj.GenerateResource.Cache
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NuevoMundoPersistencia\obj\Debug\GDS_NuevoMundoPersistencia.pdb

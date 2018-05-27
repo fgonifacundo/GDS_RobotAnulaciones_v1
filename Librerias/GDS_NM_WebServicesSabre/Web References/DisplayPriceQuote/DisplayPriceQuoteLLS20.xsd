@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:stl="http://services.sabre.com/STL/v01" xmlns:sws="http://webservices.sabre.com/sabreXML/2011/10" elementFormDefault="qualified" targetNamespace="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="STL_For_SabreProtocol_v.1.2.0.xsd" namespace="http://services.sabre.com/STL/v01" />
+  <xs:include schemaLocation="sws_common.xsd" />
+  <xs:element name="DisplayPriceQuoteRS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="stl:ApplicationResults" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceQuote">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="MiscInformation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="AncillaryFees">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="FeeInformation">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  <xs:attribute name="PassengerNameNumber" type="xs:string" use="optional" />
+                                  <xs:attribute name="PassengerQuantity" type="xs:string" use="optional" />
+                                  <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="BaggageFees">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="Category35NetTicketing">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="FareInformation">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="BaseFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Commission">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="Percent" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="EquivFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Taxes">
+                                  <xs:complexType>
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="TotalFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="RPH" type="xs:integer" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="FareCalculation">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+                              </xs:sequence>
+                              <xs:attribute name="RPH" type="xs:integer" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxInformation">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="3" name="Tax">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="Indicator" type="xs:string" use="optional" />
+                                    <xs:attribute name="TaxCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="RPH" type="xs:integer" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="FareData">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Discount">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="Text" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="TourCode">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="Text" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="FuturePriceInstructions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="GlobalNetRemit">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="NetFare">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="BaseFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="EquivFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Taxes">
+                                  <xs:complexType>
+                                    <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="TotalFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="SellingFare">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="BaseFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="EquivFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Taxes">
+                                  <xs:complexType>
+                                    <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="TotalFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="MethodType" type="xs:string" use="optional" />
+                        <xs:attribute name="ValueCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Indicators">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="DisplayOnly">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="DomesticInternational" type="xs:string" />
+                          <xs:element minOccurs="0" name="FareType" type="xs:string" />
+                          <xs:element minOccurs="0" name="IT_BT_Fare" type="xs:string" />
+                          <xs:element minOccurs="0" name="ItineraryChange">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="ManualFare">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="NegotiatedFare">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="NUC_Supression">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="StoredFare" type="xs:string" />
+                          <xs:element minOccurs="0" name="SubjectToGovernmentApproval" type="xs:string" />
+                          <xs:element minOccurs="0" name="VerifyFareCalculation">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="ViewershipRestricted">
+                            <xs:complexType>
+                              <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="NameLinkage">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="PassengerName">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="NameNumber" type="xs:string" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="PassengerAccountingData">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="SignatureLine">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="CreationAgent" type="xs:string" use="optional" />
+                        <xs:attribute name="CreateDateTime" type="sws:dateTime" use="optional" />
+                        <xs:attribute name="ExpirationDate" type="sws:date" use="optional" />
+                        <xs:attribute name="ExpirationTime" type="sws:time" use="optional" />
+                        <xs:attribute name="HomePseudoCityCode" type="xs:string" use="optional" />
+                        <xs:attribute name="PseudoCityCode" type="xs:string" use="optional" />
+                        <xs:attribute name="Source" type="xs:string" use="optional" />
+                        <xs:attribute name="Status" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketingFees">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="FeeInformation">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="AccountData" type="xs:string" use="optional" />
+                                  <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                  <xs:attribute name="DisplayOnOutputInd" type="xs:string" use="optional" />
+                                  <xs:attribute name="FunctionCode" type="xs:string" use="optional" />
+                                  <xs:attribute name="GuaranteeType" type="xs:string" use="optional" />
+                                  <xs:attribute name="NonCommissionInd" type="xs:string" use="optional" />
+                                  <xs:attribute name="NonRefundableInd" type="xs:string" use="optional" />
+                                  <xs:attribute name="OnlineInterlineService" type="xs:string" use="optional" />
+                                  <xs:attribute name="ServiceType" type="xs:string" use="optional" />
+                                  <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Disclaimer" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketingInstructions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PricedItinerary">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="AirItineraryPricingInfo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="FareCalculation">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="ItinTotalFare">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="BaseFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="EquivFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Taxes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tax">
+                                        <xs:complexType>
+                                          <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                          <xs:attribute name="PaidInd" type="xs:string" use="optional" />
+                                          <xs:attribute name="TaxCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="TaxCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="TotalFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Warnings">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="Warning">
+                                        <xs:complexType>
+                                          <xs:attribute name="ShortText" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="PassengerTypeQuantity">
+                            <xs:complexType>
+                              <xs:attribute name="Code" type="xs:string" use="optional" />
+                              <xs:attribute name="Quantity" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="PTC_FareBreakdown">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightSegment">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="BaggageAllowance">
+                                        <xs:complexType>
+                                          <xs:attribute name="Number" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="FareBasis">
+                                        <xs:complexType>
+                                          <xs:attribute name="Code" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="MarketingAirline">
+                                        <xs:complexType>
+                                          <xs:attribute name="Code" type="xs:string" use="optional" />
+                                          <xs:attribute name="FlightNumber" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="OriginLocation">
+                                        <xs:complexType>
+                                          <xs:attribute name="LocationCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="ValidityDates">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="NotValidAfter" type="sws:fullDate" />
+                                            <xs:element minOccurs="0" name="NotValidBefore" type="sws:fullDate" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="ConnectionInd" type="xs:string" use="optional" />
+                                    <xs:attribute name="DepartureDateTime" type="sws:dateOrTime" use="optional" />
+                                    <xs:attribute name="FlightNumber" type="xs:string" use="optional" />
+                                    <xs:attribute name="ResBookDesigCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="RPH" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="ResTicketingRestrictions" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="DisplayOnly" type="xs:boolean" use="optional" />
+                  <xs:attribute name="InputMessage" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ResponseHeader">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="RPH" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="PriceQuoteBreakdown">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ItinTotalFare">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="BaseFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="EquivFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="Taxes">
+                      <xs:complexType>
+                        <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="TotalFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="PassengerFare">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="BaseFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="EquivFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="Taxes">
+                      <xs:complexType>
+                        <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="TotalFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceQuoteReissue">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="MiscInformation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="BaggageFees">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="SignatureLine">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="FreeText" type="xs:string" />
+                          <xs:element minOccurs="0" name="Text" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="CreationAgent" type="xs:string" use="optional" />
+                        <xs:attribute name="CreateDateTime" type="sws:dateTime" use="optional" />
+                        <xs:attribute name="ExpirationDate" type="sws:date" use="optional" />
+                        <xs:attribute name="ExpirationTime" type="sws:time" use="optional" />
+                        <xs:attribute name="HomePseudoCityCode" type="xs:string" use="optional" />
+                        <xs:attribute name="PseudoCityCode" type="xs:string" use="optional" />
+                        <xs:attribute name="Source" type="xs:string" use="optional" />
+                        <xs:attribute name="Status" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketingFees">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="FeeInformation">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="AccountData" type="xs:string" use="optional" />
+                                  <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                  <xs:attribute name="DisplayOnOutputInd" type="xs:string" use="optional" />
+                                  <xs:attribute name="FunctionCode" type="xs:string" use="optional" />
+                                  <xs:attribute name="GuaranteeType" type="xs:string" use="optional" />
+                                  <xs:attribute name="NonCommissionInd" type="xs:string" use="optional" />
+                                  <xs:attribute name="NonRefundableInd" type="xs:string" use="optional" />
+                                  <xs:attribute name="OnlineInterlineService" type="xs:string" use="optional" />
+                                  <xs:attribute name="ServiceType" type="xs:string" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Disclaimer" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PricedItinerary">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="AirItineraryPricingInfo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="ExchangeDetails">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Category35NetFare">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="BaseFare">
+                                        <xs:complexType>
+                                          <xs:attribute name="Amount" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="EquivFare">
+                                        <xs:complexType>
+                                          <xs:attribute name="Amount" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="Tax">
+                                        <xs:complexType>
+                                          <xs:attribute name="TotalAmount" type="xs:decimal" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="TotalFare">
+                                        <xs:complexType>
+                                          <xs:attribute name="Amount" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="TicketType" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeFeeInformation">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="MiscInformation">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="Commission">
+                                        <xs:complexType>
+                                          <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                          <xs:attribute name="OnPenaltyAmount" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="HemisphereCode" type="xs:string" />
+                                      <xs:element minOccurs="0" name="JourneyCode" type="xs:string" />
+                                      <xs:element minOccurs="0" name="PaymentInfo">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="Payment">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element minOccurs="0" name="Form" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="TourCode">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="Text" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="Waiver">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="Code" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="ValidatingCarrier" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="NonFlightInformation">
+                                  <xs:complexType>
+                                    <xs:attribute name="DocNumber" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="TicketValue" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="PersonName">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="Surname" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionInformation">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="Text" type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="DocNumber" type="xs:string" use="optional" />
+                              <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                              <xs:attribute name="ExchangeReissue" type="xs:string" use="optional" />
+                              <xs:attribute name="PQR_Ind" type="xs:string" use="optional" />
+                              <xs:attribute name="PQR_Status" type="xs:string" use="optional" />
+                              <xs:attribute name="Source" type="xs:string" use="optional" />
+                              <xs:attribute name="TicketValue" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="FareCalculation">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="ItinTotalFare">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="BaseFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="EquivFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Taxes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tax">
+                                        <xs:complexType>
+                                          <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                          <xs:attribute name="PaidInd" type="xs:string" use="optional" />
+                                          <xs:attribute name="TaxCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="TaxCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="TotalAmount" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="TotalFare">
+                                  <xs:complexType>
+                                    <xs:attribute name="Amount" type="xs:string" use="optional" />
+                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="Warnings">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="Warning">
+                                        <xs:complexType>
+                                          <xs:attribute name="ShortText" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="PassengerTypeQuantity">
+                            <xs:complexType>
+                              <xs:attribute name="Code" type="xs:string" use="optional" />
+                              <xs:attribute name="Quantity" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="PTC_FareBreakdown">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightSegment">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="BaggageAllowance">
+                                        <xs:complexType>
+                                          <xs:attribute name="Number" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="FareBasis">
+                                        <xs:complexType>
+                                          <xs:attribute name="Code" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="MarketingAirline">
+                                        <xs:complexType>
+                                          <xs:attribute name="Code" type="xs:string" use="optional" />
+                                          <xs:attribute name="FlightNumber" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="OriginLocation">
+                                        <xs:complexType>
+                                          <xs:attribute name="LocationCode" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="ValidityDates">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" name="NotValidAfter" type="sws:fullDate" />
+                                            <xs:element minOccurs="0" name="NotValidBefore" type="sws:fullDate" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="ConnectionInd" type="xs:string" use="optional" />
+                                    <xs:attribute name="DepartureDateTime" type="sws:dateOrTime" use="optional" />
+                                    <xs:attribute name="FlightNumber" type="xs:string" use="optional" />
+                                    <xs:attribute name="ResBookDesigCode" type="xs:string" use="optional" />
+                                    <xs:attribute name="RPH" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="ResTicketingRestrictions" type="sws:dateTime" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="InputMessage" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ResponseHeader">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="RPH" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceQuoteSummary">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Indicators">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="DisplayOnly">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="DomesticInternational" type="xs:string" />
+                    <xs:element minOccurs="0" name="FareType" type="xs:string" />
+                    <xs:element minOccurs="0" name="IT_BT_Fare" type="xs:string" />
+                    <xs:element minOccurs="0" name="ItineraryChange">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="ManualFare">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="NegotiatedFare">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="NUC_Supression">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="Reissue">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="StoredFare" type="xs:string" />
+                    <xs:element minOccurs="0" name="SubjectToGovernmentApproval" type="xs:string" />
+                    <xs:element minOccurs="0" name="VerifyFareCalculation">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="ViewershipRestricted">
+                      <xs:complexType>
+                        <xs:attribute name="Ind" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ItinTotalFare">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="TotalFare">
+                      <xs:complexType>
+                        <xs:attribute name="Amount" type="xs:string" use="optional" />
+                        <xs:attribute name="CurrencyCode" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PTC_FareBreakdown">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="FareBasis">
+                      <xs:complexType>
+                        <xs:attribute name="Code" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="PassengerName" type="xs:string" />
+                    <xs:element minOccurs="0" name="PassengerTypeQuantity">
+                      <xs:complexType>
+                        <xs:attribute name="Code" type="xs:string" use="optional" />
+                        <xs:attribute name="NameNumber" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Text" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="CreateDate" type="sws:date" use="optional" />
+            <xs:attribute name="RPH" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

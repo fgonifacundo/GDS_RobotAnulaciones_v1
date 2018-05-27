@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Segoe UI" Size="9" />
+  <Class Name="GDS_NuevoMundoPersistencia.classPNR">
+    <Position X="18.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classPNR.vb</FileName>
+      <HashCode>BQAgwACAIRAAICAEiAIhCBQAAQARAJAQCACAQAgAAAI=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objTarifa" />
+      <Field Name="objTourCodeResultado" />
+      <Field Name="objTourCodeConceptos" />
+      <Field Name="strCiudadDestino" />
+      <Field Name="objDsctExtra" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="lstSegmentos" />
+      <Field Name="lstPasajeros" />
+      <Field Name="lstReporteVentas" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="lstPasajeros" Type="GDS_NuevoMundoPersistencia.classPasajeros">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.133" Y="0.058" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="lstReporteVentas" Type="GDS_NuevoMundoPersistencia.classReporteVentas" FixedFromPoint="true">
+      <Path>
+        <Point X="18.25" Y="8.236" />
+        <Point X="16.5" Y="8.236" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objTarifa" Type="GDS_NuevoMundoPersistencia.classTarifa" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="20" Y="9.875" />
+        <Point X="22.5" Y="9.875" />
+        <Point X="22.5" Y="9.875" />
+        <Point X="25" Y="9.875" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objTourCodeResultado" Type="GDS_NuevoMundoPersistencia.classTourCodeResultado" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="9.75" />
+        <Point X="14.5" Y="9.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="strCiudadDestino" Type="GDS_NuevoMundoPersistencia.classCiudad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20" Y="8.562" />
+        <Point X="23.832" Y="8.562" />
+        <Point X="23.832" Y="8.562" />
+        <Point X="25.5" Y="8.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objDsctExtra" Type="GDS_NuevoMundoPersistencia.classDsctExtra" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="10.107" />
+        <Point X="16.125" Y="10.107" />
+        <Point X="16.125" Y="10.5" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classSegmetos">
+    <Position X="21.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classSegmetos.vb</FileName>
+      <HashCode>ACAAgBDEABBAAJgKAQCAAAABACBjwQACEQAIAgAQAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objOrigen" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classCiudad">
+    <Position X="25.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classCiudad.vb</FileName>
+      <HashCode>EAAQAAAAAQAIQAAAgIAAgAAAAAAAAAAAAAgAAAECAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classPasajeros">
+    <Position X="18.25" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classPasajeros.vb</FileName>
+      <HashCode>EgRAgBDhBBAAgAAAEAAAgAAAACAgCAACAAABSAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDocumento">
+    <Position X="25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDocumento.vb</FileName>
+      <HashCode>AAAAAAABAAAACAAAIAAAAAAAAAAAAIAAAAAAAAABAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classCliente">
+    <Position X="10.25" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classCliente.vb</FileName>
+      <HashCode>AMIAAUgUAIKCAaEMAKAADAEAAhAAAwAE1EAEogABACI=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objUsuario" />
+      <Field Name="objSucursalPunto" />
+      <Field Name="objPromotor" />
+      <Field Name="objPermisos" />
+      <Field Name="objClienteFacturar" />
+      <Field Name="objLineaCredito" />
+      <Field Name="objDocumentosVencidos" />
+      <Field Name="objGDS_Interface" />
+      <Field Name="objGrupoInterno" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="lstSubCodigo" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="lstSubCodigo" Type="GDS_NuevoMundoPersistencia.classSubCodigo" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="8.96" />
+        <Point X="9.375" Y="8.96" />
+        <Point X="9.375" Y="4.074" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objUsuario" Type="GDS_NuevoMundoPersistencia.classUsuario" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="9.169" />
+        <Point X="6.938" Y="9.169" />
+        <Point X="6.938" Y="5.065" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objSucursalPunto" Type="GDS_NuevoMundoPersistencia.classSucursalPunto" FixedFromPoint="true">
+      <Path>
+        <Point X="10.25" Y="12.346" />
+        <Point X="5" Y="12.346" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.1" Y="0.018" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="objPermisos" Type="GDS_NuevoMundoPersistencia.classPermisos" FixedFromPoint="true">
+      <Path>
+        <Point X="10.25" Y="9.868" />
+        <Point X="2.5" Y="9.868" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objClienteFacturar" Type="GDS_NuevoMundoPersistencia.classClienteFacturar" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.062" Y="8.75" />
+        <Point X="11.062" Y="2.5" />
+        <Point X="13" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objLineaCredito" Type="GDS_NuevoMundoPersistencia.classLineaCredito" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="13.714" />
+        <Point X="7.562" Y="13.714" />
+        <Point X="7.562" Y="16.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objDocumentosVencidos" Type="GDS_NuevoMundoPersistencia.classDocumentosVencidos" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="15.243" />
+        <Point X="9.312" Y="15.243" />
+        <Point X="9.312" Y="20.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objGDS_Interface" Type="GDS_NuevoMundoPersistencia.classGDS_Interface" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="13.236" />
+        <Point X="4.375" Y="13.236" />
+        <Point X="4.375" Y="15" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classUsuario">
+    <Position X="6" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classUsuario.vb</FileName>
+      <HashCode>AABCAAAAAAAAAAAAAABAAAAAAAAAIAAAAACIAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classSubCodigo">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classSubCodigo.vb</FileName>
+      <HashCode>AABAABAAAAAAgAAAAAAAgAAAAAAgAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classSucursalPunto">
+    <Position X="3.25" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classSucursalPunto.vb</FileName>
+      <HashCode>AABAAAAIABAAAAAAAAAEgAgAAAAAAAABCAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classTarjeta">
+    <Position X="31" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classTarjeta.vb</FileName>
+      <HashCode>EAQAAIAAAQAAgAEAgoIAAAAAAAAAAQACAAQBAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objDocumento" />
+    </ShowAsAssociation>
+    <AssociationLine Name="objDocumento" Type="GDS_NuevoMundoPersistencia.classDocumento" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="31.438" Y="19.75" />
+        <Point X="31.438" Y="2.438" />
+        <Point X="26.5" Y="2.438" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDeposito">
+    <Position X="35.25" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDeposito.vb</FileName>
+      <HashCode>BAAAAAAAAAAAgBAAAAEIoEAAAACAAAQBAAMBAAACCAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objImporte" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classFormaPago">
+    <Position X="25.5" Y="23.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classFormaPago.vb</FileName>
+      <HashCode>AABAABQIAAACAAAAIAAAgAAAAAAAAAAEAACAEAMAAIQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objCardCash" />
+      <Field Name="objDepositoTarjeta" />
+      <Field Name="objTarjeta" />
+      <Property Name="Cash" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="objDeposito" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="objDeposito" Type="GDS_NuevoMundoPersistencia.classDeposito" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="25.685" />
+        <Point X="35.25" Y="25.685" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objCardCash" Type="GDS_NuevoMundoPersistencia.classCardCash" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="23.5" />
+        <Point X="29" Y="23.5" />
+        <Point X="29" Y="22.546" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objTarjeta" Type="GDS_NuevoMundoPersistencia.classTarjeta" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="23.79" />
+        <Point X="31.688" Y="23.79" />
+        <Point X="31.688" Y="23.421" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Cash" Type="GDS_NuevoMundoPersistencia.classMonto" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.062" Y="23.25" />
+        <Point X="26.062" Y="22.875" />
+        <Point X="26.062" Y="22.875" />
+        <Point X="26.062" Y="20.074" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDepositoTarjeta">
+    <Position X="32.25" Y="23.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDepositoTarjeta.vb</FileName>
+      <HashCode>AAAAAAAIAAACAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objTarjeta" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Deposito" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="objTarjeta" Type="GDS_NuevoMundoPersistencia.classTarjeta" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="33.438" Y="23.75" />
+        <Point X="33.438" Y="22.306" />
+        <Point X="32.5" Y="22.306" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Deposito" Type="GDS_NuevoMundoPersistencia.classDeposito" FixedToPoint="true">
+      <Path>
+        <Point X="34" Y="24.432" />
+        <Point X="35.25" Y="24.432" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classCardCash">
+    <Position X="28.25" Y="21.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classCardCash.vb</FileName>
+      <HashCode>AABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objCash" />
+      <Field Name="objCard" />
+    </ShowAsAssociation>
+    <AssociationLine Name="objCash" Type="GDS_NuevoMundoPersistencia.classMonto" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.875" Y="21.25" />
+        <Point X="28.875" Y="19.562" />
+        <Point X="26.5" Y="19.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objCard" Type="GDS_NuevoMundoPersistencia.classTarjeta" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="29.75" Y="22.188" />
+        <Point X="30.125" Y="22.188" />
+        <Point X="30.125" Y="22.188" />
+        <Point X="31" Y="22.188" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classEasyOnLine">
+    <Position X="15" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classEasyOnLine.vb</FileName>
+      <HashCode>ggABBAQQAACQAQACAEiAhAIAABAgEABEAAIAkCAAIAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objPNR" />
+      <Field Name="objCliente" />
+      <Field Name="objFormaPago" />
+      <Field Name="objTipoTarifa" />
+      <Field Name="objTipoEmision" />
+      <Field Name="objGDS" />
+      <Field Name="objCotizacion" />
+      <Field Name="objSolicitud" />
+      <Field Name="objDocFacturacion" />
+    </ShowAsAssociation>
+    <AssociationLine Name="objFormaPago" Type="GDS_NuevoMundoPersistencia.classFormaPago" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="18.94" />
+        <Point X="15.5" Y="24.875" />
+        <Point X="25.042" Y="24.875" Type="JumpStart" />
+        <Point X="25.208" Y="24.875" Type="JumpEnd" />
+        <Point X="25.5" Y="24.875" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objTipoTarifa" Type="GDS_NuevoMundoPersistencia.classDato" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.5" Y="17.852" />
+        <Point X="20.75" Y="17.852" />
+        <Point X="20.75" Y="16.44" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objTipoEmision" Type="GDS_NuevoMundoPersistencia.classDato" FixedFromPoint="true">
+      <Path>
+        <Point X="16.5" Y="15.869" />
+        <Point X="19.01" Y="15.869" Type="JumpStart" />
+        <Point X="19.177" Y="15.869" Type="JumpEnd" />
+        <Point X="20" Y="15.869" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objGDS" Type="GDS_NuevoMundoPersistencia.classDato" FixedFromPoint="true">
+      <Path>
+        <Point X="16.5" Y="15.321" />
+        <Point X="19.01" Y="15.321" Type="JumpStart" />
+        <Point X="19.177" Y="15.321" Type="JumpEnd" />
+        <Point X="20" Y="15.321" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objCotizacion" Type="GDS_NuevoMundoPersistencia.classCotizacion" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.938" Y="18.94" />
+        <Point X="15.938" Y="20.875" />
+        <Point X="17.5" Y="20.875" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objSolicitud" Type="GDS_NuevoMundoPersistencia.classSolicitud" FixedFromPoint="true">
+      <Path>
+        <Point X="16.5" Y="18.674" />
+        <Point X="21.5" Y="18.674" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objDocFacturacion" Type="GDS_NuevoMundoPersistencia.classDocFacturacion" FixedFromPoint="true">
+      <Path>
+        <Point X="15" Y="17.921" />
+        <Point X="12.25" Y="17.921" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classPermisos">
+    <Position X="0.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classPermisos.vb</FileName>
+      <HashCode>AAAKgQAGgABiQAQAAAiEAEgACAAKAAAAAAAAAAQABCA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classPromotor">
+    <Position X="3.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classPromotor.vb</FileName>
+      <HashCode>AAAUAAAAAQAAAAAAAAAAAAAAAAACAAAgQAAgAAACAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classClienteFacturar">
+    <Position X="13" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classClienteFacturar.vb</FileName>
+      <HashCode>AAAAAAQAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objCliente" />
+    </ShowAsAssociation>
+    <AssociationLine Name="objCliente" Type="GDS_NuevoMundoPersistencia.classPasajeros" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.75" Y="2.563" />
+        <Point X="15.375" Y="2.563" />
+        <Point X="15.375" Y="2.563" />
+        <Point X="18.25" Y="2.563" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDocumentosVencidos">
+    <Position X="8.5" Y="20.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDocumentosVencidos.vb</FileName>
+      <HashCode>ACAQIQAAAACBAAUAAABAAAAQggAAQAAAQAAAAAAIAYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classReporteVentas">
+    <Position X="14.75" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classReporteVentas.vb</FileName>
+      <HashCode>QAAAAAAAgAAAAAEEAAACCAAAAQAAAAACAAAAAAIEAAA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Class Name="GDS_NuevoMundoPersistencia.classReporteVentas.classBoleto" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ClasesObjetos\classReporteVentas.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classTarifa">
+    <Position X="25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classTarifa.vb</FileName>
+      <HashCode>AAABgAAAABAAAAQABAAAAQAEIAAAIAIAAAACAAAIAAQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objTotalReserva" />
+      <Field Name="objFeeNM" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="objTarifa_x_Pax" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="objTotalReserva" Type="GDS_NuevoMundoPersistencia.classMonto">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.018" Y="0.318" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="objTarifa_x_Pax" Type="GDS_NuevoMundoPersistencia.classTarifa_x_Tipo" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.5" Y="10.875" />
+        <Point X="29.875" Y="10.875" />
+        <Point X="29.875" Y="15.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objFeeNM" Type="GDS_NuevoMundoPersistencia.classMonto" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="25" Y="10.75" />
+        <Point X="23.875" Y="10.75" />
+        <Point X="23.875" Y="18.312" />
+        <Point X="25" Y="18.312" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classCorteTarifario">
+    <Position X="28.75" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classCorteTarifario.vb</FileName>
+      <HashCode>BAAAAAAAAAAAAAggAQAAAAAAAAABAIAAAAAAhAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classTarifa_x_Tipo">
+    <Position X="29.25" Y="15.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classTarifa_x_Tipo.vb</FileName>
+      <HashCode>QAAAgACAAIIgABQkAEBABIAASAAAAIAAAEAAAgEAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objTotalPax" />
+      <Field Name="objTarifaNeta" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="lstDetalleImpuestos" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="objTotalPax" Type="GDS_NuevoMundoPersistencia.classMonto" FixedToPoint="true">
+      <Path>
+        <Point X="29.25" Y="18.375" />
+        <Point X="26.5" Y="18.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="lstDetalleImpuestos" Type="GDS_NuevoMundoPersistencia.classMonto" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="29.25" Y="19.887" />
+        <Point X="28.875" Y="19.887" />
+        <Point X="28.875" Y="18.812" />
+        <Point X="26.5" Y="18.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="objTarifaNeta" Type="GDS_NuevoMundoPersistencia.classMonto" FixedFromPoint="true">
+      <Path>
+        <Point X="29.25" Y="18.79" />
+        <Point X="26.5" Y="18.79" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classMonto">
+    <Position X="25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classMonto.vb</FileName>
+      <HashCode>ACAAAAAAAQABAAAAgAAAAAAIAAAQAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDato">
+    <Position X="20" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDato.vb</FileName>
+      <HashCode>AAAAAIAAAQAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classTourCodeResultado">
+    <Position X="12.5" Y="7" Width="2" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classTourCodeResultado.vb</FileName>
+      <HashCode>gAAggAAAAEACEAQABgIIYABAACAAAAAAASAEAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classCotizacion">
+    <Position X="17.5" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classCotizacion.vb</FileName>
+      <HashCode>AAAgAUAAAAAIAAEAAABAABAAAAAAAAAAgAAhAIAAAAg=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="lstPasajeros" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="lstPasajeros" Type="GDS_NuevoMundoPersistencia.classPaxCotizacion" FixedFromPoint="true">
+      <Path>
+        <Point X="19" Y="22" />
+        <Point X="20.25" Y="22" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classPaxCotizacion">
+    <Position X="20.25" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classPaxCotizacion.vb</FileName>
+      <HashCode>AABAEAAAIAAAAAAFECBAgAAAAAAAAAAAAAKCAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objNeto" />
+    </ShowAsAssociation>
+    <AssociationLine Name="objNeto" Type="GDS_NuevoMundoPersistencia.classMonto" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.75" Y="22.393" />
+        <Point X="25.042" Y="22.393" Type="JumpStart" />
+        <Point X="25.208" Y="22.393" Type="JumpEnd" />
+        <Point X="25.25" Y="22.393" />
+        <Point X="25.25" Y="20.074" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classGDS_Interface">
+    <Position X="3.5" Y="15" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classGDS_Interface.vb</FileName>
+      <HashCode>gAEAAAAIAAQAEAAEAAACAAAAAAAAA4ADAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classSolicitud">
+    <Position X="21.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classSolicitud.vb</FileName>
+      <HashCode>AAAAEAAQKAAAAAAAAAAAAEAAAAAAQIAAAAAAAAAgAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="objNeto" />
+      <Field Name="objTotal" />
+    </ShowAsAssociation>
+    <AssociationLine Name="objNeto" Type="GDS_NuevoMundoPersistencia.classMonto" FixedToPoint="true">
+      <Path>
+        <Point X="23" Y="18.938" />
+        <Point X="25" Y="18.938" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDocFacturacion">
+    <Position X="10.75" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDocFacturacion.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAgAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classTourCodeConceptos">
+    <Position X="22" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classTourCodeConceptos.vb</FileName>
+      <HashCode>AAAAARIAAAAAgAAAAEAAAAAACAAAEAAAgAAAgAEAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="lstConcepto" />
+    </ShowAsCollectionAssociation>
+    <AssociationLine Name="lstConcepto" Type="GDS_NuevoMundoPersistencia.classDato" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22" Y="12.312" />
+        <Point X="20.75" Y="12.312" />
+        <Point X="20.75" Y="14.5" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classLineaCredito">
+    <Position X="6.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classLineaCredito.vb</FileName>
+      <HashCode>IAEAACAAAECAAAAABAAgAAAAAAAAIIAAAAAAAABBAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classGrupoInterno">
+    <Position X="7" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classGrupoInterno.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAIAABAAAAAAAAAABAAAAAAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDsctExtra">
+    <Position X="15.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDsctExtra.vb</FileName>
+      <HashCode>AAAAAAACAAAAAAABAAgAAAAAAAAAAAAEAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDS_NuevoMundoPersistencia.classDocTarjeta">
+    <Position X="28.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ClasesObjetos\classDocTarjeta.vb</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="objDocumento" />
+    </ShowAsCollectionAssociation>
+  </Class>
+</ClassDiagram>

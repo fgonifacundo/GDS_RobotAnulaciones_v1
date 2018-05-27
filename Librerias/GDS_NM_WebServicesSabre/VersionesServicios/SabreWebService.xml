@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml name="SabreWebServices" id="SabreWebServices" type="text/xml">
+  <WebServices Id="00">
+    <WebService Id="01">
+      <Name>SessionCreate</Name>
+      <Service>Session</Service>
+      <Action>SessionCreateRQ</Action>
+      <Cid>SessionCreateRQ</Cid>
+      <Version></Version>
+    </WebService>
+    <!--SessionCreate 1.0.1-->
+    <WebService Id="02">
+      <Name>SessionClose</Name>
+      <Service>Session</Service>
+      <Action>SessionCloseRQ</Action>
+      <Cid>SessionCloseRQ</Cid>
+      <Version></Version>
+    </WebService>
+    <!--SessionClose 1.0.1-->
+    <WebService Id="03">
+      <Name>OTA_AirLowFareSearch</Name>
+      <Service>Low Fare Search</Service>
+      <Action>OTA_AirLowFareSearchLLSRQ</Action>
+      <Cid>OTA_AirLowFareSearchRQ</Cid>
+      <Version>1.13.1</Version>
+    </WebService>
+    <!--OTA_AirLowFareSearch 1.12.1-->
+    <WebService Id="04">
+      <Name>OTA_AirAvail</Name>
+      <Service>Air</Service>
+      <Action>OTA_AirAvailLLSRQ</Action>
+      <Cid>OTA_AirAvailRQ</Cid>
+      <Version>1.5.1</Version>
+    </WebService>
+    <!--OTA_AirAvail 1.5.1-->
+    <WebService Id="05">
+      <Name>OTA_AirRules</Name>
+      <Service>AirRules</Service>
+      <Action>OTA_AirRulesLLSRQ</Action>
+      <Cid>OTA_AirRulesRQ</Cid>
+      <Version>2.2.0</Version>
+    </WebService>
+    <!--OTA_AirRules 1.3.1-->
+    <WebService Id="06">
+      <Name>TravelItineraryAddInfo</Name>
+      <Service>TravelItineraryAddInfo</Service>
+      <Action>TravelItineraryAddInfoLLSRQ</Action>
+      <Cid>TravelItineraryAddInfoRQ</Cid>
+      <Version>2.0.2</Version>
+    </WebService>
+    <!--TravelItineraryAddInfo 1.7.1-->
+    <WebService Id="07">
+      <Name>OTA_AirBook</Name>
+      <Service>AirBook</Service>
+      <Action>OTA_AirBookLLSRQ</Action>
+      <Cid>OTA_AirBookRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--OTA_AirBook 1.5.1-->
+    <WebService Id="08">
+      <Name>OTA_AirPrice</Name>
+      <Service>Air Price</Service>
+      <Action>OTA_AirPriceLLSRQ</Action>
+      <Cid>OTA_AirPriceRQ</Cid>
+      <Version>2.5.0</Version>
+    </WebService>
+    <!--OTA_AirPrice 2.4.0-->
+    <WebService Id="09">
+      <Name>EndTransaction</Name>
+      <Service>End Transaction</Service>
+      <Action>EndTransactionLLSRQ</Action>
+      <Cid>EndTransactionRQ</Cid>
+      <Version>2.0.2</Version>
+    </WebService>
+    <!--EndTransaction 1.2.1-->
+    <WebService Id="10">
+      <Name>SabreCommand</Name>
+      <Service>SabreCommand</Service>
+      <Action>SabreCommandLLSRQ</Action>
+      <Cid>SabreCommandLLSRQ</Cid>
+      <Version>1.6.1</Version>
+    </WebService>
+    <!--SabreCommand 1.6.1-->
+    <WebService Id="11">
+      <Name>OTA_TravelItineraryRead</Name>
+      <Service>TravelItineraryRead</Service>
+      <Action>OTA_TravelItineraryReadLLSRQ</Action>
+      <Cid>OTA_TravelItineraryReadRQ</Cid>
+      <Version>1.15.1</Version>
+    </WebService>
+    <!--OTA_TravelItineraryRead 1.15.1-->
+    <WebService Id="12">
+      <Name>AirTicket</Name>
+      <Service>Air Ticket</Service>
+      <Action>AirTicketLLSRQ</Action>
+      <Cid>AirTicketRQ</Cid>
+      <Version>1.9.1</Version>
+    </WebService>
+    <!--AirTicket 1.9.1-->
+    <WebService Id="13">
+      <Name>Mileage</Name>
+      <Service>Mileage</Service>
+      <Action>MileageLLSRQ</Action>
+      <Cid>MileageRQ</Cid>
+      <Version>1.2.1</Version>
+    </WebService>
+    <!--Mileage 1.2.1-->
+    <WebService Id="14">
+      <Name>OTA_Cancel</Name>
+      <Service>Cancel</Service>
+      <Action>OTA_CancelLLSRQ</Action>
+      <Cid>OTA_CancelRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--OTA_Cancel 1.0.1-->
+    <WebService Id="15">
+      <Name>AddRemark</Name>
+      <Service>AddRemark</Service>
+      <Action>AddRemarkLLSRQ</Action>
+      <Cid>AddRemarkRQ</Cid>
+      <Version>2.1.0</Version>
+    </WebService>
+    <!--AddRemark 1.2.1-->
+    <WebService Id="16">
+      <Name>QPlace</Name>
+      <Service>QueuePlace</Service>
+      <Action>QPlaceLLSRQ</Action>
+      <Cid>QPlaceRQ</Cid>
+      <Version>1.1.1</Version>
+    </WebService>
+    <!--QPlace 1.1.1-->
+    <WebService Id="17">
+      <Name>BargainFinderPlus</Name>
+      <Service>Bargainfinder Plus</Service>
+      <Action>BargainFinderPlusLLSRQ</Action>
+      <Cid>BargainFinderPlusRQ</Cid>
+      <Version>1.3.1</Version>
+    </WebService>
+    <!--BargainFinderPlus 1.3.1-->
+    <WebService Id="18">
+      <Name>OTA_AirFlifo</Name>
+      <Service>Flifo</Service>
+      <Action>OTA_AirFlifoLLSRQ</Action>
+      <Cid>OTA_AirFlifoRQ</Cid>
+      <Version>1.2.1</Version>
+    </WebService>
+    <!--OTA_AirFlifo 1.2.1-->
+    <WebService Id="19">
+      <Name>Fare</Name>
+      <Service>Fare</Service>
+      <Action>FareLLSRQ</Action>
+      <Cid>FareRQ</Cid>
+      <Version>1.10.1</Version>
+    </WebService>
+    <!--FareLLSRQ 1.9.1-->
+    <WebService Id="20">
+      <Name>DisplayPriceQuote</Name>
+      <Service>DisplayPriceQuote</Service>
+      <Action>DisplayPriceQuoteLLSRQ</Action>
+      <Cid>DisplayPriceQuoteRQ</Cid>
+      <Version>1.3.1</Version>
+    </WebService>
+    <!--DisplayPriceQuoteLLSRQ 1.3.1-->
+    <WebService Id="21">
+      <Name>ChangeAAALLSRQ</Name>
+      <Service>ChangeAAALLSRQ</Service>
+      <Action>ChangeAAALLSRQ</Action>
+      <Cid>ChangeAAARQ</Cid>
+      <Version>1.0.1</Version>
+    </WebService>
+    <!--ChangeAAARQ 1.0.1-->
+    <WebService Id="22">
+      <Name>DesignatePrinter</Name>
+      <Service>DesignatePrinter</Service>
+      <Action>DesignatePrinterLLSRQ</Action>
+      <Cid>DesignatePrinterRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--DesignatePrinterRQ1.0.1-->
+    <WebService Id="23">
+      <Name>eTicketCoupon</Name>
+      <Service>eTicketCoupon</Service>
+      <Action>eTicketCouponLLSRQ</Action>
+      <Cid>eTicketCouponRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--eTicketCuponRQ1.0.1-->
+    <WebService Id="24">
+      <Name>eTicketStatus</Name>
+      <Service>eTicketStatus</Service>
+      <Action>eTicketStatusLLSRQ</Action>
+      <Cid>eTicketStatusRQ</Cid>
+      <Version>1.0.1</Version>
+    </WebService>
+    <!--eTicketCuponRQ1.0.1-->
+    <WebService Id="25">
+      <Name>DailySalesReport</Name>
+      <Service>DailySalesReport</Service>
+      <Action>DailySalesReportLLSRQ</Action>
+      <Cid>DailySalesReportRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--DailySalesReportRQ1.1.1-->
+    <WebService Id="26">
+      <Name>RulesFromPrice</Name>
+      <Service>RulesFromPrice</Service>
+      <Action>RulesFromPriceLLSRQ</Action>
+      <Cid>RulesFromPrice</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--RulesFromPrice 1.0.1-->
+    <WebService Id="27">
+      <Name>TravelItineraryRead</Name>
+      <Service>TravelItineraryRead</Service>
+      <Action>TravelItineraryReadLLSRQ</Action>
+      <Cid>TravelItineraryReadRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--TravelItineraryReadRQ1.1.1-->
+    <WebService Id="28">
+      <Name>CreditVerification</Name>
+      <Service>CreditVerification</Service>
+      <Action>CreditVerificationLLSRQ</Action>
+      <Cid>CreditVerificationRQ</Cid>
+      <Version>1.2.1</Version>
+    </WebService>
+    <WebService Id="29">
+      <Name>SessionValidate</Name>
+      <Service>SessionValidate</Service>
+      <Action>SessionValidateRQ</Action>
+      <Cid>SessionValidate</Cid>
+      <Version>1.0.1</Version>
+    </WebService>
+    <WebService Id="30">
+      <Name>SpecialService</Name>
+      <Service>SpecialService</Service>
+      <Action>SpecialServiceLLSRQ</Action>
+      <Cid>SpecialServiceRQ</Cid>
+      <Version>2.0.2</Version>
+    </WebService>
+    <WebService Id="31">
+      <Name>DeleteSpecialService</Name>
+      <Service>DeleteSpecialService</Service>
+      <Action>DeleteSpecialServiceLLSRQ</Action>
+      <Cid>DeleteSpecialServiceRQ</Cid>
+      <Version>2.2.0</Version>
+    </WebService>
+    <!--DeleteSpecialServiceRQ1.2.1-->
+    <WebService Id="32">
+      <Name>ARUNK</Name>
+      <Service>ARUNK</Service>
+      <Action>ARUNK_LLSRQ</Action>
+      <Cid>ARUNKRQ</Cid>
+      <Version>2.0.1</Version>
+    </WebService>
+    <!--ArunkLLSRQ1.4.1-->
+    <WebService Id="33">
+      <Name>QPlace</Name>
+      <Service>QPlace</Service>
+      <Action>QPlaceLLSRQ</Action>
+      <Cid>QPlaceRQ</Cid>
+      <Version>1.5.1</Version>
+    </WebService>
+    <!--QPlaceLLSRQ1.5.1-->
+    <WebService Id="34">
+      <Name>TravelItineraryModifyInfo</Name>
+      <Service>TravelItineraryModifyInfo</Service>
+      <Action>TravelItineraryModifyInfoLLSRQ</Action>
+      <Cid>TravelItineraryModifyInfoRQ</Cid>
+      <Version>1.2.1</Version>
+    </WebService>
+    <!--TravelItineraryModifyInfoLLSRQ1.2.1-->
+    <WebService Id="35">
+      <Name>ContextChange</Name>
+      <Service>ContextChange</Service>
+      <Action>ContextChangeLLSRQ</Action>
+      <Cid>ContextChangeRQ</Cid>
+      <Version>2.0.3</Version>
+      <!--ContextChangeLLSRQ2.0.3-->
+    </WebService>
+    <WebService Id="36">
+      <Name>BargainFinderMax_SAPTRQ</Name>
+      <Service>Air Shopping Service</Service>
+      <Action>BargainFinderMax_SAPTRQ</Action>
+      <Cid>BargainFinderMax_SAPTRQ</Cid>
+      <Version>1.6.1</Version>
+    </WebService>
+    <!--BargainFinderMax_SAPTRQ 1.6.1-->
+    <WebService Id="37">
+      <Name>IgnoreTransactionRQ</Name>
+      <Service>IgnoreTransaction</Service>
+      <Action>IgnoreTransactionLLSRQ</Action>
+      <Cid>IgnoreTransactionRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <WebService Id="38">
+      <Name>QueueAccessRQ</Name>
+      <Service>QueueAccessService</Service>
+      <Action>QueueAccessLLSRQ</Action>
+      <Cid>QueueAccessRQ</Cid>
+      <Version>2.0.2</Version>
+    </WebService>
+    <!--QueueAccessRQ 2.0.2-->
+    <WebService Id="39">
+      <Name>VoidTicketRQ</Name>
+      <Service>VoidTicketService</Service>
+      <Action>VoidTicketLLSRQ</Action>
+      <Cid>VoidTicketRQ</Cid>
+      <Version>2.0.1</Version>
+    </WebService>
+    <!--QueueAccessRQ 2.0.2-->
+    <WebService Id="40">
+      <Name>MileageRQ</Name>
+      <Service>MileageService</Service>
+      <Action>MileageLLSRQ</Action>
+      <Cid>MileageRQ</Cid>
+      <Version>1.3.1</Version>
+    </WebService>
+    <!--MileageRQ 1.3.1-->
+    <WebService Id="41">
+      <Name>TravelItineraryModifyInfoRQ</Name>
+      <Service>TravelItineraryModifyInfo</Service>
+      <Action>TravelItineraryModifyInfoLLSRQ</Action>
+      <Cid>TravelItineraryModifyInfoRQ</Cid>
+      <Version>2.0.1</Version>
+    </WebService>
+    <!--TravelItineraryModifyInfoRQ 2.0.0-->
+    <WebService Id="42">
+      <Name>PromotionalShopping</Name>
+      <Service>Air Shopping Service</Service>
+      <Action>PromotionalShoppingRQ</Action>
+      <Cid>PromotionalShoppingRQ</Cid>
+      <Version>1.0.2</Version>
+    </WebService>
+    <!--PromotionalShoppingRQ 1.0.2-->
+    <WebService Id="43">
+      <Name>TravelItineraryRead</Name>
+      <Service>TravelItineraryReadRQ</Service>
+      <Action>TravelItineraryReadRQ</Action>
+      <Cid>TravelItineraryReadRQ</Cid>
+      <Version>3.5.0</Version>
+    </WebService>
+    <!--TravelItineraryRead 3.5.0-->
+    <WebService Id="44">
+      <Name>InvoiceItinerary</Name>
+      <Service>InvoiceItineraryLLSRQ</Service>
+      <Action>InvoiceItineraryLLSRQ</Action>
+      <Cid>InvoiceItineraryRQ</Cid>
+      <Version>1.1.1</Version>
+    </WebService><!--InvoiceItinerary 1.0.2-->
+    <WebService Id="45">
+      <Name>FareLLS</Name>
+      <Service>FareLLSRQ</Service>
+      <Action>FareLLSRQ</Action>
+      <Cid>FareLLSRQ</Cid>
+      <Version>2.1.0</Version>
+    </WebService><!--FareLLS 2.1.0-->
+    <WebService Id="46">
+      <Name>AirTicket</Name>
+      <Service>AirTicketService</Service>
+      <Action>AirTicketLLSRQ</Action>
+      <Cid>AirTicketRQ</Cid>
+      <Version>2.3.0</Version>
+    </WebService>
+    <!--AirTicket 2.3.0-->
+    <WebService Id="47">
+      <Name>DailyEMD_ReportService</Name>
+      <Service>DailyEMD_ReportService</Service>
+      <Action>DailyEMD_ReportLLSRQ</Action>
+      <Cid>DailyEMD_ReportServiceRQ</Cid>
+      <Version>2.0.0</Version>
+    </WebService>
+    <!--DailyEMD_ReportLLS 2.0.0-->
+    <WebService Id="48">
+      <Name>EMD_DisplayService</Name>
+      <Service>EMD_DisplayService</Service>
+      <Action>EMD_DisplayLLSRQ</Action>
+      <Cid>EMD_DisplayServiceRQ</Cid>
+      <Version>2.0.1</Version>
+    </WebService>
+  <!--EMD_DisplayService 2.0.1-->
+    <WebService Id="49">
+      <Name>AutomatedExchanges</Name>
+      <Service>AutomatedExchangesService</Service>
+      <Action>AutomatedExchangesLLSRQ</Action>
+      <Cid>AutomatedExchangesRQ</Cid>
+      <Version>2.3.0</Version>
+    </WebService>
+    <!--AutomatedExchanges -->
+    <WebService Id="50">
+      <Name>ExchangeShopping</Name>
+      <Service>ExchangeShoppingService</Service>
+      <Action>ExchangeShoppingLLSRQ</Action>
+      <Cid>ExchangeShoppingRQ</Cid>
+      <Version>2.0.1</Version>
+    </WebService>
+    <!--ExchangeShopping-->
+    <WebService Id="51">
+      <Name>ExchangeShopping</Name>
+      <Service>ExchangeShoppingService</Service>
+      <Action>ExchangeShoppingLLSRQ</Action>
+      <Cid>ExchangeShoppingRQ</Cid>
+      <Version>2.0.1</Version>
+    </WebService>
+    <!--ExchangeShopping-->
+    <WebService Id="52">
+      <Name>TravelItineraryRead</Name>
+      <Service>TravelItineraryReadRQ</Service>
+      <Action>TravelItineraryReadRQ</Action>
+      <Cid>TravelItineraryReadRQ</Cid>
+      <Version>3.6.0</Version>
+    </WebService>
+    <!--TravelItineraryRead 3.6.0-->
+    <WebService Id="53">
+      <Name>ModifyRemark</Name>
+      <Service>ModifyRemarkService</Service>
+      <Action>ModifyRemarkLLSRQ</Action>
+      <Cid>ModifyRemark</Cid>
+      <Version>2.1.0</Version>
+    </WebService>
+    <!--TravelItineraryRead 3.6.0-->
+    <WebService Id="54">
+      <Name>AirTicket</Name>
+      <Service>AirTicketService</Service>
+      <Action>AirTicketLLSRQ</Action>
+      <Cid>AirTicketRQ</Cid>
+      <Version>2.7.0</Version>
+    </WebService><!--AirTicket 2.7.0-->
+    <WebService Id="56">
+      <Name>QueuePlace</Name>
+      <Service>QueuePlaceService</Service>
+      <Action>QueuePlaceLLSRQ</Action>
+      <Cid>QueuePlaceRQ</Cid>
+      <Version>2.0.4</Version>
+    </WebService>
+  </WebServices>
+</xml>
+

@@ -1,0 +1,12 @@
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\bin\Release\GDS_MuevoMundoLog.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\bin\Release\GDS_MuevoMundoLog.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\bin\Release\GDS_MuevoMundoLog.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\bin\Release\GDS_NuevoMundoPersistencia.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\bin\Release\GDS_NuevoMundoPersistencia.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\bin\Release\GDS_NuevoMundoPersistencia.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\obj\Release\GDS_NuevoMundoLog.vbprojResolveAssemblyReference.cache
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\obj\Release\GDS_MuevoMundoLog.Resources.resources
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\obj\Release\GDS_NuevoMundoLog.vbproj.GenerateResource.Cache
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\obj\Release\GDS_MuevoMundoLog.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\obj\Release\GDS_MuevoMundoLog.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_MuevoMundoLog\obj\Release\GDS_MuevoMundoLog.pdb

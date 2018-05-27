@@ -1,0 +1,95 @@
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.exe.config
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.exe
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Oracle.DataAccess.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.dll
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.pdb
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.xml
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\Robot_GDS_Aviso_Voideo.csprojResolveAssemblyReference.cache
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.Form1.resources
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.Properties.Resources.resources
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\Robot_GDS_Aviso_Voideo.csproj.GenerateResource.Cache
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.exe
+C:\Robot de anulaciones\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.exe.config
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.exe
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Oracle.DataAccess.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.dll
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.xml
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.pdb
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.xml
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\Robot_GDS_Aviso_Voideo.csprojResolveAssemblyReference.cache
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.Form1.resources
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.Properties.Resources.resources
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\Robot_GDS_Aviso_Voideo.csproj.GenerateResource.Cache
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.exe
+C:\CompartidaFlavio\Robot Anulaciones 24-10\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\AvisoAnulacion_Tabla.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\AvisoAnulacion.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\AvisoNoEnPTA_Tabla.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\AvisoNoEnPTA.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\AvisoNoFacturados_Tabla.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\AvisoNoFacturados.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Reportes\HTML\EstructuraBaseCorreo.html
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.exe.config
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.exe
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\ROTOB_ANULACION.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Newtonsoft.Json.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\NuevoMundoSecurity.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Oracle.DataAccess.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\System.Net.Http.Formatting.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_MuevoMundoLog.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_Mensajeria.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NM_WebServicesSabre.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoDominio.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoPersistencia.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\Newtonsoft.Json.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\System.Net.Http.Formatting.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\GDS_NuevoMundoAccesoDatos.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\Robot_GDS_Aviso_Voideo.csprojResolveAssemblyReference.cache
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.Form1.resources
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.Properties.Resources.resources
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\Robot_GDS_Aviso_Voideo.csproj.GenerateResource.Cache
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.exe
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\obj\Debug\ROTOB_ANULACION.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\APP_AMADEUS_NM.config
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\APP_SABRE_AGCORP.config
+D:\Robot_GDS_Aviso_Voideo_SABRE\ROTOB_ANULACION\bin\Debug\APP_SABRE_NM.config

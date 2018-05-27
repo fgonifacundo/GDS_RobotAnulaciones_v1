@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sws_xsd="http://webservices.sabre.com/sabreXML/2011/10" xmlns:sws="https://webservices.sabre.com/websvc" xmlns:eb="http://www.ebxml.org/namespaces/messageHeader" targetNamespace="https://webservices.sabre.com/websvc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="DailyEMD_ReportLLS2.0.0RQRS.xsd" namespace="http://webservices.sabre.com/sabreXML/2011/10" />
+      <xsd:import schemaLocation="msg-header-2_0.xsd" namespace="http://www.ebxml.org/namespaces/messageHeader" />
+      <xsd:import schemaLocation="wsse.xsd" namespace="http://schemas.xmlsoap.org/ws/2002/12/secext" />
+      <xsd:import schemaLocation="STL_For_SabreProtocol_v.1.2.0.xsd" namespace="http://services.sabre.com/STL/v01" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DailyEMD_ReportInput">
+    <wsdl:part name="header" element="eb:MessageHeader" />
+    <wsdl:part name="header2" element="wsse:Security" />
+    <wsdl:part name="body" element="sws_xsd:DailyEMD_ReportRQ" />
+  </wsdl:message>
+  <wsdl:message name="DailyEMD_ReportOutput">
+    <wsdl:part name="header" element="eb:MessageHeader" />
+    <wsdl:part name="header2" element="wsse:Security" />
+    <wsdl:part name="body" element="sws_xsd:DailyEMD_ReportRS" />
+  </wsdl:message>
+  <wsdl:portType name="DailyEMD_ReportPortType">
+    <wsdl:operation name="DailyEMD_ReportRQ">
+      <wsdl:input message="sws:DailyEMD_ReportInput" />
+      <wsdl:output message="sws:DailyEMD_ReportOutput" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DailyEMD_ReportSoapBinding" type="sws:DailyEMD_ReportPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DailyEMD_ReportRQ">
+      <soap:operation soapAction="DailyEMD_ReportLLSRQ" />
+      <wsdl:input>
+        <soap:header message="sws:DailyEMD_ReportInput" part="header" use="literal" />
+        <soap:header message="sws:DailyEMD_ReportInput" part="header2" use="literal" />
+        <soap:body use="literal" parts="body" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="sws:DailyEMD_ReportOutput" part="header" use="literal" />
+        <soap:header message="sws:DailyEMD_ReportOutput" part="header2" use="literal" />
+        <soap:body use="literal" parts="body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DailyEMD_ReportService">
+    <wsdl:port name="DailyEMD_ReportPortType" binding="sws:DailyEMD_ReportSoapBinding">
+      <soap:address location="https://webservices.sabre.com/websvc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

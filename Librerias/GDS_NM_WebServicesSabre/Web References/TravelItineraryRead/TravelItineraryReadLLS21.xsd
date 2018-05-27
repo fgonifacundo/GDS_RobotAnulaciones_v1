@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:sws="http://webservices.sabre.com/sabreXML/2011/10" elementFormDefault="qualified" targetNamespace="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="sws_common.xsd" />
+  <xs:element name="TravelItineraryReadRQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MessagingDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ApplicationID" type="xs:string" />
+              <xs:element maxOccurs="unbounded" name="Transaction">
+                <xs:complexType>
+                  <xs:attribute name="Code" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="PNR" />
+                        <xs:enumeration value="GEN" />
+                        <xs:enumeration value="PAX" />
+                        <xs:enumeration value="FNR" />
+                        <xs:enumeration value="FFT" />
+                        <xs:enumeration value="PHN" />
+                        <xs:enumeration value="AFD" />
+                        <xs:enumeration value="GFD" />
+                        <xs:enumeration value="ADR" />
+                        <xs:enumeration value="CDR" />
+                        <xs:enumeration value="ACR" />
+                        <xs:enumeration value="PPT" />
+                        <xs:enumeration value="HRM" />
+                        <xs:enumeration value="FQP" />
+                        <xs:enumeration value="GRM" />
+                        <xs:enumeration value="BSD" />
+                        <xs:enumeration value="AIT" />
+                        <xs:enumeration value="HOT" />
+                        <xs:enumeration value="CAR" />
+                        <xs:enumeration value="TIN" />
+                        <xs:enumeration value="AX1" />
+                        <xs:enumeration value="AX2" />
+                        <xs:enumeration value="TRM" />
+                        <xs:enumeration value="TFS" />
+                        <xs:enumeration value="FOP" />
+                        <xs:enumeration value="WSR" />
+                        <xs:enumeration value="PH4" />
+                        <xs:enumeration value="FPL" />
+                        <xs:enumeration value="FBL" />
+                        <xs:enumeration value="ACC" />
+                        <xs:enumeration value="ITN" />
+                        <xs:enumeration value="ITR" />
+                        <xs:enumeration value="INV" />
+                        <xs:enumeration value="DDR" />
+                        <xs:enumeration value="PTD" />
+                        <xs:enumeration value="SIP" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="UniqueID">
+          <xs:complexType>
+            <xs:attribute name="ID" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ReturnHostCommand" type="xs:boolean" use="optional" />
+      <xs:attribute name="TimeStamp" type="xs:dateTime" use="optional" />
+      <xs:attribute fixed="2.0.0" name="Version" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://webservices.sabre.com/sabreXML/2003/07" elementFormDefault="qualified" targetNamespace="http://webservices.sabre.com/sabreXML/2003/07" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MileageRS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Success" type="xs:string" />
+        <xs:element minOccurs="0" name="Warnings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Warning">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="ShortText" type="xs:string" use="optional" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="OriginInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="OriginLocation">
+                <xs:complexType>
+                  <xs:attribute name="LocationCode" type="xs:string" use="optional" />
+                  <xs:attribute default="IATA" name="CodeContext" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IATAIndicator">
+                <xs:complexType>
+                  <xs:attribute name="Code" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="LineNumber">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="DestinationLocation">
+                <xs:complexType>
+                  <xs:attribute name="LocationCode" type="xs:string" use="optional" />
+                  <xs:attribute default="IATA" name="CodeContext" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IATAIndicator">
+                <xs:complexType>
+                  <xs:attribute name="Ind" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="GlobalIndicator">
+                <xs:complexType>
+                  <xs:attribute name="Ind" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TicketedPointMileage">
+                <xs:complexType>
+                  <xs:attribute name="Mileage" type="xs:string" use="optional" />
+                  <xs:attribute name="Source" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="CumulativeTicketedPointMileage">
+                <xs:complexType>
+                  <xs:attribute name="Mileage" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="MaximumPermittedMileage">
+                <xs:complexType>
+                  <xs:attribute name="Mileage" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ApplicableSurcharge">
+                <xs:complexType>
+                  <xs:attribute name="Surcharge" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TicketedPointDeduction">
+                <xs:complexType>
+                  <xs:attribute name="Amount" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ReduceMileageSurcharge">
+                <xs:complexType>
+                  <xs:attribute name="Surcharge" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NextPercentageAdditionalMiles">
+                <xs:complexType>
+                  <xs:attribute name="Amount" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="MaxMileage25Surcharge">
+                <xs:complexType>
+                  <xs:attribute name="Surcharge" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="RPH" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="TPA_Extensions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="HostCommand" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="Errors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Error">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="ErrorInfo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="Message" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ErrorCode" type="xs:string" use="optional" />
+                  <xs:attribute name="Severity" type="xs:string" use="optional" />
+                  <xs:attribute name="ErrorMessage" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="EchoToken" type="xs:string" use="optional" />
+      <xs:attribute name="TimeStamp" type="xs:string" use="optional" />
+      <xs:attribute name="Target" type="xs:string" use="optional" />
+      <xs:attribute name="Version" type="xs:string" use="optional" />
+      <xs:attribute name="SequenceNmbr" type="xs:boolean" use="optional" />
+      <xs:attribute name="PrimaryLangID" type="xs:string" use="optional" />
+      <xs:attribute name="AltLangID" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

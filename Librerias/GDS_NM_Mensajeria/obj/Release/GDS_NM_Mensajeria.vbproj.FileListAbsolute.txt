@@ -1,0 +1,14 @@
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_NM_Mensajeria.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_NM_Mensajeria.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_NM_Mensajeria.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_MuevoMundoLog.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_NuevoMundoPersistencia.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_MuevoMundoLog.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_MuevoMundoLog.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_NuevoMundoPersistencia.pdb
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\bin\Release\GDS_NuevoMundoPersistencia.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\obj\Release\GDS_NM_Mensajeria.Resources.resources
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\obj\Release\GDS_NM_Mensajeria.vbproj.GenerateResource.Cache
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\obj\Release\GDS_NM_Mensajeria.dll
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\obj\Release\GDS_NM_Mensajeria.xml
+D:\Robot_GDS_Aviso_Voideo_SABRE\Librerias\GDS_NM_Mensajeria\obj\Release\GDS_NM_Mensajeria.pdb
